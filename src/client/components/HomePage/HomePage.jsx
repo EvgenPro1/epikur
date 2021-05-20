@@ -1,5 +1,4 @@
 import React from "react"
-import {NavLink} from "react-router-dom";
 import Header from "../Header/Header.js";
 
 export const HomePage = () => {
@@ -29,7 +28,7 @@ export const HomePage = () => {
         return img.map(item => {
                 const imgClassName = `first-images image${i}`
                 i++
-                return <img key={item} src={item} className={imgClassName}/>
+                return <img key={item} src={item} className={imgClassName} alt=""/>
             }
         )
     }

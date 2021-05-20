@@ -24,8 +24,9 @@ export const AdminPage = () => {
 
     useEffect(()=>{getCardsColl()
         // console.log(allCards);
+        // eslint-disable-next-line
     },[])
-    // eslint-disable-next-line
+
 
     const addCard = async () => {
      const {title, price, quantity, image} = newCard
@@ -36,9 +37,9 @@ export const AdminPage = () => {
         setNewCard(() => initialCard)
 
     }
-
+    // eslint-disable-next-line
     const addNewProduct = () => {
-        // eslint-disable-next-line
+
         dispatch(createAddProducts())
     }
 
@@ -54,14 +55,16 @@ export const AdminPage = () => {
     const changeImage = (id) => {
         dispatch(createAddProducts(id))
     }
+    // eslint-disable-next-line
     const changer = (e) => {
-        // eslint-disable-next-line
+
         e.preventDefault()
         addCard()
     }
 
+    // eslint-disable-next-line
     const getNewValue = ({target: {value}}) => {
-        // eslint-disable-next-line
+
         // setNewValue(() => value)
     }
 

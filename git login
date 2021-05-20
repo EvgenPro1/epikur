@@ -1,0 +1,23 @@
+[33mcommit a1b71a1457e61f51569171b5812a1a6dd7846e32[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Євген Євген <epronenko@gmail.com>
+Date:   Thu May 20 12:27:39 2021 +0300
+
+    err killing
+
+[33mcommit ef4f328308e8e9753520d4b56f3bac087e5052e0[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Євген Євген <epronenko@gmail.com>
+Date:   Thu May 20 11:20:32 2021 +0300
+
+    first commit
+
+[33mcommit 62289bf726364bd99c5644703eee851a4e5d19a5[m
+Author: Євген Євген <epronenko@gmail.com>
+Date:   Thu May 20 11:18:55 2021 +0300
+
+    first commit
+
+[33mcommit 1d4fd97a08fa329b721d8562f7bdf0301c1d4394[m
+Author: Євген Євген <epronenko@gmail.com>
+Date:   Wed May 19 15:02:15 2021 +0300
+
+    Initialize project using Create React App
