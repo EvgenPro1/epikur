@@ -1,6 +1,6 @@
 // import React from "react";
 import {fire} from './index';
-
+// eslint-disable-next-line
 const userRegister = {
     // eslint-disable-next-line
     Email: '',
@@ -99,6 +99,7 @@ export function generateNormalName(data) {
 export function checkProblem(forms) {
     let problems = [];
     let repeatPasswordArr = []
+    // eslint-disable-next-line
     Object.entries(forms).map((el) => {
         const string = el[1].value
         el[1].options.forEach((o) => {
@@ -125,14 +126,18 @@ export function checkProblem(forms) {
                 console.log('PW', string, o)
                 const checkedData = o.replace('PW', '').split('')
                 let counter = 0
+                // eslint-disable-next-line
                 checkedData.map((el, indx) => {
                     //uppercase case
                     if (el === 'u' && typeof +checkedData[indx + 1] === 'number') {
+                        // eslint-disable-next-line
                         let number = checkedData[indx + 1]
 
+                        // eslint-disable-next-line
                         string.split('').map(character => {
                             console.log('chars', character)
 
+                            // eslint-disable-next-line
                             if (character == character.toUpperCase()) {
                                 counter = counter + 1
                             }
@@ -153,6 +158,7 @@ export function checkProblem(forms) {
 }
 export function setDataToFirebase(forms) {
     let result = {}
+    // eslint-disable-next-line
     forms.map(el => {
             result = {...result, [el.keyText]: el.value}
         }
