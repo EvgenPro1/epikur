@@ -6,10 +6,9 @@ import {getCollection, setDocumentToCollection} from "../../../Firebase/helper";
 import './AdminPage.css'
 import {NavLink} from "react-router-dom";
 
-
 const initialCard = {title:'', price:'', image:'', quantity:'', update:false}
 
-export const Products = () => {
+export const AdminPage = () => {
     const [newCard, setNewCard] = useState(initialCard)
     const [allCards, setAllCards] = useState('')
     const [newValue, setNewValue] = useState()

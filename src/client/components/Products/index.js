@@ -1,1 +1,1 @@
-export {Products} from './Products'
+export {AdminPage} from './AdminPage'

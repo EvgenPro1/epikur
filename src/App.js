@@ -1,25 +1,39 @@
-import logo from './logo.svg';
+import {NavLink, BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
+import HomeHoc from "./HOC/homeHOC";
+// import './styles/main-fonts.css';
+import './styles/main-styles.sass';
 import './App.css';
 
+import './bootstrap.min.css';
+import {HomePage} from "./client/components/HomePage/HomePage";
+import {AdminPage} from "./client/components/Products";
+import {Provider} from "react-redux";
+import {store} from "./store/store";
+
+
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <Router>
+        <Provider store={store}>
+          <Route exact path='/'><HomePage/></Route>
+
+          {/*<HomeHoc>*/}
+
+          <Switch>
+
+              <Route exact path='/AdminPage'><AdminPage/></Route>
+            <Route path='/ProductWindow'/>
+            <Route exact path='/Cart'/>
+            <Route path='*'/>
+          </Switch>
+
+          {/*</HomeHoc>*/}
+          <div className='qwe'>$main_color_light_green</div>
+        </Provider>
+      </Router>
+  )
 }
 
 export default App;

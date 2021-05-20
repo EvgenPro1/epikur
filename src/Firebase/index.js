@@ -5,13 +5,13 @@ import 'firebase/storage'
 import 'firebase/database'
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAfZuEpqDQfuQzbN8tH-3eM-tTF7IgwMMU",
-    authDomain: "adminshop-39aa6.firebaseapp.com",
-    projectId: "adminshop-39aa6",
-    storageBucket: "adminshop-39aa6.appspot.com",
-    messagingSenderId: "495010748475",
-    appId: "1:495010748475:web:b8c93b495e34ce3b05e41e",
-    measurementId: "G-HCVX9D9MQP"
+    apiKey: "AIzaSyAzSCoZlMYMEWV7NuXMvcfHw1IofZQLnp8",
+    authDomain: "epikur-web.firebaseapp.com",
+    projectId: "epikur-web",
+    storageBucket: "epikur-web.appspot.com",
+    messagingSenderId: "76356809158",
+    appId: "1:76356809158:web:353da980d287a33bf782c7",
+    measurementId: "G-WHS4QZVNHG"
 };
 
 export const fire = firebase.initializeApp(firebaseConfig)
