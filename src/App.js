@@ -1,7 +1,6 @@
-import {NavLink, BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-import HomeHoc from "./HOC/homeHOC";
-// import './styles/main-fonts.css';
+
 import './styles/main-styles.sass';
 import './App.css';
 

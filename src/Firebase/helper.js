@@ -1,7 +1,8 @@
-import React from "react";
+// import React from "react";
 import {fire} from './index';
 
 const userRegister = {
+    // eslint-disable-next-line
     Email: '',
     Phone_Number: '',
     Password: '',

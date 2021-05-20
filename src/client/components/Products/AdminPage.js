@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from "react-redux";
 import {createAddProducts, createChangeProduct, _createGetProducts} from "../../../store/actionCreators";
 import {TD} from "../Td/TD";
@@ -10,8 +10,8 @@ const initialCard = {title:'', price:'', image:'', quantity:'', update:false}
 
 export const AdminPage = () => {
     const [newCard, setNewCard] = useState(initialCard)
-    const [allCards, setAllCards] = useState('')
-    const [newValue, setNewValue] = useState()
+    // const [allCards, setAllCards] = useState('')
+    // const [newValue, setNewValue] = useState()
     const products = useSelector(state => state)
     const dispatch = useDispatch()
 
@@ -23,8 +23,9 @@ export const AdminPage = () => {
     };
 
     useEffect(()=>{getCardsColl()
-        console.log(allCards);
+        // console.log(allCards);
     },[])
+    // eslint-disable-next-line
 
     const addCard = async () => {
      const {title, price, quantity, image} = newCard
@@ -37,6 +38,7 @@ export const AdminPage = () => {
     }
 
     const addNewProduct = () => {
+        // eslint-disable-next-line
         dispatch(createAddProducts())
     }
 
@@ -53,12 +55,14 @@ export const AdminPage = () => {
         dispatch(createAddProducts(id))
     }
     const changer = (e) => {
+        // eslint-disable-next-line
         e.preventDefault()
         addCard()
     }
 
     const getNewValue = ({target: {value}}) => {
-        setNewValue(() => value)
+        // eslint-disable-next-line
+        // setNewValue(() => value)
     }
 
     const addTitle = (e) => {
