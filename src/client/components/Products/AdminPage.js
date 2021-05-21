@@ -1,12 +1,14 @@
 import React, {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from "react-redux";
 import {createAddProducts, createChangeProduct, _createGetProducts} from "../../../store/actionCreators";
-import {TD} from "../Td/TD";
-import {getCollection, setDocumentToCollection} from "../../../Firebase/helper";
+import {TD} from "../../../shared/components/Td/TD";
+import {deleteDocumentFromCollectionWithID, getCollection, setDocumentToCollection} from "../../../Firebase/helper";
 import './AdminPage.css'
 import {NavLink} from "react-router-dom";
+import Button from "../../../shared/components/Button/Button";
 
-const initialCard = {title:'', price:'', image:'', quantity:'', update:false}
+const initialCard = {title: '', price: '', image: '', quantity: '', update: false}
+const defaultCollection = 'TestEpikur-223E23d2@#4f2ref2'
 
 export const AdminPage = () => {
     const [newCard, setNewCard] = useState(initialCard)
@@ -16,26 +18,35 @@ export const AdminPage = () => {
     const dispatch = useDispatch()
 
     const getCardsColl = async () => {
-        getCollection('cards').then(collection => {
-            console.log(_createGetProducts);
+        getCollection(defaultCollection).then(collection => {
+            console.log(collection);
             dispatch(_createGetProducts(collection))
         })
     };
 
-    useEffect(()=>{getCardsColl()
+    const deleteProductById = async (id, collection = defaultCollection) => {
+        deleteDocumentFromCollectionWithID(collection, id).then(r => {
+            getCardsColl()
+        }).catch(e => {
+        })
+    };
+
+    useEffect(() => {
+        getCardsColl()
         // console.log(allCards);
         // eslint-disable-next-line
-    },[])
+    }, [])
 
 
     const addCard = async () => {
-     const {title, price, quantity, image} = newCard
-        setDocumentToCollection('cards', {title, price, quantity, image}
+        const {title, price, quantity, image} = newCard
+        setDocumentToCollection(defaultCollection, {title, price, quantity, image}
         ).then(r => {
+
         }).catch(e => {
         })
         setNewCard(() => initialCard)
-
+        await getCardsColl()
     }
     // eslint-disable-next-line
     const addNewProduct = () => {
@@ -69,36 +80,43 @@ export const AdminPage = () => {
     }
 
     const addTitle = (e) => {
-        setNewCard(() => ({...newCard,
+        setNewCard(() => ({
+            ...newCard,
             title: e.target.value
         }))
     }
     const addPrice = (e) => {
-        setNewCard(() => ({...newCard,
+        setNewCard(() => ({
+            ...newCard,
             price: e.target.value
         }))
     }
     const addQuantity = (e) => {
-        setNewCard(() => ({...newCard,
+        setNewCard(() => ({
+            ...newCard,
             quantity: e.target.value
         }))
     }
     const addImg = (e) => {
-        setNewCard(() => ({...newCard,
+        setNewCard(() => ({
+            ...newCard,
             image: e.target.value
         }))
     }
 
-    const productsList = products.map(({title, price, image, quantity, id, update}) => {
-
+    const productsList = products.map(({title, price, image, quantity, idPost, update}) => {
             return <>
-                <tr key={id} className='product-card'>
-                    <TD update={update} value={title} dataName='title' changer={changeTitle} id={id}/>
-                    <td onDoubleClick={() => changePrice(id)} className="clickable price">{price} usd</td>
-                    <td onDoubleClick={() => changeQuantity(id)} className=" clickable quantity">{quantity} </td>
-                    <td><img onDoubleClick={() => changeImage(id)} src={image} alt='' className="image clickable"/></td>
+                <tr key={idPost} className='product-card'>
+                    <TD key={idPost} update={update} value={title} changer={changeTitle} id={idPost}/>
+                    <TD key={idPost} update={update} value={price} changer={changePrice} id={idPost}/>
+                    <TD key={idPost} update={update} value={quantity} changer={changeQuantity} id={idPost}/>
+                    {/*<TD key={idPost} update={update} value={title} changer={changeImage} id={idPost}/>*/}
+                    {/*<td onDoubleClick={() => changePrice(idPost)} className="clickable price">{price} usd</td>*/}
+                    {/*<td onDoubleClick={() => changeQuantity(idPost)} className=" clickable quantity">{quantity} </td>*/}
+                    <td><img onDoubleClick={() => changeImage(idPost)} src={image} alt='' className="image clickable"/></td>
                     <td>
-                        <button>delete product</button>
+                        <Button handleClick={() => deleteProductById(idPost)} text='delete product'
+                                className='btn btn-outline-danger'/>
                     </td>
                 </tr>
             </>
@@ -111,7 +129,7 @@ export const AdminPage = () => {
                 <NavLink className='navbar-brand' to='/'>Home</NavLink>
                 <NavLink className='navbar-brand' to='/AdminPage'>AdminPage</NavLink>
             </navbar>
-            <table className="table table-striped mt-2">
+            <table className="table table-striped position-relative admin-table">
                 <thead>
                 <tr>
                     <th>Title</th>
@@ -124,18 +142,20 @@ export const AdminPage = () => {
 
                 <tr className='product-card'>
                     <td>
-                        <input type="text" placeholder='Title' onChange={addTitle} value = {newCard.title}/>
+                        <input type="text" placeholder='Title' onChange={addTitle} value={newCard.title}/>
                     </td>
                     <td>
-                        <input type="text" placeholder='Price' onChange={addPrice} value = {newCard.price}/>
+                        <input type="number" placeholder='Price' onChange={addPrice} value={newCard.price}/>
                     </td>
                     <td>
-                        <input type="text" placeholder='quantity' onChange={addQuantity} value = {newCard.quantity}/>
+                        <input type="number" placeholder='quantity' onChange={addQuantity} value={newCard.quantity}/>
                     </td>
-                    <td><input type="text" placeholder='img (http....)' onChange={addImg} value = {newCard.image}/>
+                    <td><input type="link" placeholder='img (http....)' onChange={addImg} value={newCard.image}/>
                     </td>
                     <td>
-                        <button className='btn btn-primary' onClick={addCard}>add new product</button>
+                        <Button className='btn btn-primary'
+                                handleClick={addCard}
+                                text='add new product'/>
                     </td>
                 </tr>
 
@@ -143,7 +163,12 @@ export const AdminPage = () => {
 
                 </tbody>
             </table>
-            <button className='getColl' onClick= {getCardsColl}>Test button "getColl"</button>
+            <Button className='btn-warning
+            position-absolute
+            justify-content-center
+            left40 align-self-center' handleClick={getCardsColl}
+                    text='Test button "getColl"'/>
+            {/*<button className='getColl' onClick= {getCardsColl}>Test button "getColl"</button>*/}
         </>
     )
 }

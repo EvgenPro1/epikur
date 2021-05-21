@@ -19,7 +19,11 @@ export const productReducer = (state= initialProductState, {type, payload}) => {
             //     })())}
                 return [...newState]
 
+        // case DELETE_ONE_PRODUCT:
+        //     deleteDocumentFromCollectionWithID()
+        //     return
         case GET_PRODUCTS:
+            console.log(payload);
             return payload
 
 

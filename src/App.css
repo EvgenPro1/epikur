@@ -17,6 +17,17 @@ body {
   height: 100vh;
 }
 
+.admin-table {
+  top: 70px
+}
+.my-example {
+  bottom: 0;
+}
+.left40{
+  left:40%;
+  top:0
+}
+
 .home-page-block{
   height: 100vh;
 }
@@ -226,3 +237,5 @@ body {
 *{
   font-family: Formular;
 }
+
+
