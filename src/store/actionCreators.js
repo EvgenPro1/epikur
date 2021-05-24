@@ -2,7 +2,6 @@ import {
     ADD_PRODUCTS,
     CHANGE_OLD_FIELD,
     CHANGE_PRODUCT,
-    CHANGE_TITLE,
     GET_PRODUCTS,
     SAVE_CHANGES_PRODUCT
 } from './actions'

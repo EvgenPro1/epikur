@@ -1,5 +1,5 @@
 import {initialProductState} from "../initialProductState";
-import {CHANGE_OLD_FIELD, CHANGE_PRODUCT, CHANGE_TITLE, GET_PRODUCTS, SAVE_CHANGES_PRODUCT} from '../actions'
+import {CHANGE_OLD_FIELD, CHANGE_PRODUCT, GET_PRODUCTS, SAVE_CHANGES_PRODUCT} from '../actions'
 
 export const productReducer = (state = initialProductState, {type, payload}) => {
     let newState;

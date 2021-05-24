@@ -1,21 +1,19 @@
 import React, {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from "react-redux";
+import {NavLink} from "react-router-dom";
+
+import Button from "../../../shared/components/Button/Button";
 import {
-    createAddProducts,
     createChangeProduct,
     _createGetProducts,
-    createSaveChangesProduct, createChangeOldField
-} from "../../../store/actionCreators";
-import {TD} from "../../../shared/components/Td/TD";
+    createSaveChangesProduct, createChangeOldField} from "../../../store/actionCreators";
 import {
     deleteDocumentFromCollectionWithID,
     getCollection,
     setDocumentToCollection,
-    updateDocumentInCollection
-} from "../../../Firebase/helper";
+    updateDocumentInCollection} from "../../../Firebase/helper";
+
 import './AdminPage.css'
-import {NavLink} from "react-router-dom";
-import Button from "../../../shared/components/Button/Button";
 
 const initialCard = {title: '', price: '', image: '', quantity: '', update: false}
 const defaultCollection = 'TestEpikur-223E23d2@#4f2ref2'
@@ -31,8 +29,6 @@ export const AdminPage = () => {
         })
     };
     const updateCardById = async ({update, ...rest}, idDocumnent, collection = defaultCollection) => {
-        // const newDocument = {rest}
-
         updateDocumentInCollection(collection, rest, idDocumnent).then(r=>{
             dispatch(createSaveChangesProduct(idDocumnent))
         }).catch(e=> {
@@ -40,7 +36,6 @@ export const AdminPage = () => {
         })
     }
 
-    //   //save DO (put to another func)
     const deleteProductById = async (id, collection = defaultCollection) => {
         deleteDocumentFromCollectionWithID(collection, id).then(r => {
             getCardsColl()
@@ -97,8 +92,6 @@ export const AdminPage = () => {
     const makeChanges = (id) => {
         const changedCard = products.find(({idPost})=> idPost === id)
         updateCardById(changedCard, id)
-
-        // dispatch(createSaveChangesProduct(id)) //save DO (put to another func)
     }
 
 
