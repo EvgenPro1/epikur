@@ -1,4 +1,11 @@
-import {ADD_PRODUCTS, CHANGE_PRODUCT,GET_PRODUCTS} from './actions'
+import {
+    ADD_PRODUCTS,
+    CHANGE_OLD_FIELD,
+    CHANGE_PRODUCT,
+    CHANGE_TITLE,
+    GET_PRODUCTS,
+    SAVE_CHANGES_PRODUCT
+} from './actions'
 
 export const createAddProducts = (payload = '') => {
     return {
@@ -13,9 +20,23 @@ export const createChangeProduct = (payload) => {
     }
 }
 
+export const createSaveChangesProduct = (payload) => {
+    return {
+        type: SAVE_CHANGES_PRODUCT,
+        payload,
+    }
+}
+
 export const _createGetProducts = (payload) => {
     return {
         type: GET_PRODUCTS,
+        payload,
+    }
+}
+
+export const createChangeOldField = (payload) => {
+    return {
+        type: CHANGE_OLD_FIELD,
         payload,
     }
 }

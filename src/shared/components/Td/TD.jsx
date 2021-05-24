@@ -1,15 +1,14 @@
 import React from "react";
 
-export const TD = ({value, update, changer, id}) => {
+export const TD = ({value, update, changer, id, name}) => {
 
-    const valueChanger = () => {
 
-    }
-    return <td onDoubleClick={() => changer(id)}>
+
+    return <td key={value}>
         <input type="text"
-               className='clickable'
+               className=''
                value={value}
                disabled={!update}
-               onChange={(e) => valueChanger(e)}/>
+                   onChange={(e) => changer(e, id, name)}/>
     </td>
 }

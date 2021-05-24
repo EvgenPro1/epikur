@@ -1,8 +1,18 @@
 import React, {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from "react-redux";
-import {createAddProducts, createChangeProduct, _createGetProducts} from "../../../store/actionCreators";
+import {
+    createAddProducts,
+    createChangeProduct,
+    _createGetProducts,
+    createSaveChangesProduct, createChangeOldField
+} from "../../../store/actionCreators";
 import {TD} from "../../../shared/components/Td/TD";
-import {deleteDocumentFromCollectionWithID, getCollection, setDocumentToCollection} from "../../../Firebase/helper";
+import {
+    deleteDocumentFromCollectionWithID,
+    getCollection,
+    setDocumentToCollection,
+    updateDocumentInCollection
+} from "../../../Firebase/helper";
 import './AdminPage.css'
 import {NavLink} from "react-router-dom";
 import Button from "../../../shared/components/Button/Button";
@@ -12,18 +22,25 @@ const defaultCollection = 'TestEpikur-223E23d2@#4f2ref2'
 
 export const AdminPage = () => {
     const [newCard, setNewCard] = useState(initialCard)
-    // const [allCards, setAllCards] = useState('')
-    // const [newValue, setNewValue] = useState()
     const products = useSelector(state => state)
     const dispatch = useDispatch()
 
     const getCardsColl = async () => {
         getCollection(defaultCollection).then(collection => {
-            console.log(collection);
             dispatch(_createGetProducts(collection))
         })
     };
+    const updateCardById = async ({update, ...rest}, idDocumnent, collection = defaultCollection) => {
+        // const newDocument = {rest}
 
+        updateDocumentInCollection(collection, rest, idDocumnent).then(r=>{
+            dispatch(createSaveChangesProduct(idDocumnent))
+        }).catch(e=> {
+
+        })
+    }
+
+    //   //save DO (put to another func)
     const deleteProductById = async (id, collection = defaultCollection) => {
         deleteDocumentFromCollectionWithID(collection, id).then(r => {
             getCardsColl()
@@ -33,14 +50,13 @@ export const AdminPage = () => {
 
     useEffect(() => {
         getCardsColl()
-        // console.log(allCards);
         // eslint-disable-next-line
     }, [])
 
 
     const addCard = async () => {
-        const {title, price, quantity, image} = newCard
-        setDocumentToCollection(defaultCollection, {title, price, quantity, image}
+        const {title, price, quantity, image, update} = newCard
+        setDocumentToCollection(defaultCollection, {title, price, quantity, image, update}
         ).then(r => {
 
         }).catch(e => {
@@ -48,36 +64,11 @@ export const AdminPage = () => {
         setNewCard(() => initialCard)
         await getCardsColl()
     }
-    // eslint-disable-next-line
-    const addNewProduct = () => {
 
-        dispatch(createAddProducts())
-    }
-
-    const changeTitle = (id, dataName) => {
-        dispatch(createChangeProduct(id))
-    }
-    const changePrice = (id) => {
-        dispatch(createAddProducts(id))
-    }
-    const changeQuantity = (id) => {
-        dispatch(createAddProducts(id))
-    }
-    const changeImage = (id) => {
-        dispatch(createAddProducts(id))
-    }
-    // eslint-disable-next-line
-    const changer = (e) => {
-
-        e.preventDefault()
-        addCard()
+    const changeOldField = (e, id, name) => {
+        dispatch(createChangeOldField([e, id, name]))
     }
 
-    // eslint-disable-next-line
-    const getNewValue = ({target: {value}}) => {
-
-        // setNewValue(() => value)
-    }
 
     const addTitle = (e) => {
         setNewCard(() => ({
@@ -103,17 +94,43 @@ export const AdminPage = () => {
             image: e.target.value
         }))
     }
+    const makeChanges = (id) => {
+        const changedCard = products.find(({idPost})=> idPost === id)
+        updateCardById(changedCard, id)
+
+        // dispatch(createSaveChangesProduct(id)) //save DO (put to another func)
+    }
+
+
+    const changeProductById = (id) => {
+        const index = products.findIndex(product => product.idPost === id)
+
+        if (index + 1 && !products[index].update) {
+            dispatch(createChangeProduct(id)) //change DO
+            return
+        }
+
+        if (index + 1 && products[index].update) {
+            makeChanges(id)
+        }
+    }
 
     const productsList = products.map(({title, price, image, quantity, idPost, update}) => {
-            return <>
+            const textChangeBtn = !update ? 'Change product' : 'Save changes'
+            const textClassNameBtn = !update ? 'btn btn-outline-secondary' : 'btn btn-outline-warning'
+        return <>
                 <tr key={idPost} className='product-card'>
-                    <TD key={idPost} update={update} value={title} changer={changeTitle} id={idPost}/>
-                    <TD key={idPost} update={update} value={price} changer={changePrice} id={idPost}/>
-                    <TD key={idPost} update={update} value={quantity} changer={changeQuantity} id={idPost}/>
-                    {/*<TD key={idPost} update={update} value={title} changer={changeImage} id={idPost}/>*/}
-                    {/*<td onDoubleClick={() => changePrice(idPost)} className="clickable price">{price} usd</td>*/}
-                    {/*<td onDoubleClick={() => changeQuantity(idPost)} className=" clickable quantity">{quantity} </td>*/}
-                    <td><img onDoubleClick={() => changeImage(idPost)} src={image} alt='' className="image clickable"/></td>
+                    <td><input disabled={!update} value={title}
+                               onChange={(e)=>changeOldField(e, idPost, "title")}  /></td>
+                    <td><input disabled={!update} value={price} type='number'
+                               onChange={(e)=>changeOldField(e, idPost, "price")}  /></td>
+                    <td><input disabled={!update} value={quantity} type='number'
+                               onChange={(e)=>changeOldField(e, idPost, "quantity")}  /></td>
+                    <td><img src={image} alt='' className="image"/></td>
+                    <td>
+                        <Button handleClick={() => changeProductById(idPost)} text={textChangeBtn}
+                                className={textClassNameBtn} tooltipText = "ВАЖНО! для сохранения данных обязательно нажимать 'Save changes' "/>
+                    </td>
                     <td>
                         <Button handleClick={() => deleteProductById(idPost)} text='delete product'
                                 className='btn btn-outline-danger'/>
@@ -122,7 +139,6 @@ export const AdminPage = () => {
             </>
         }
     )
-
     return (
         <>
             <navbar className="navbar navbar-dark bg-primary products-nav-bar">
@@ -132,7 +148,7 @@ export const AdminPage = () => {
             <table className="table table-striped position-relative admin-table">
                 <thead>
                 <tr>
-                    <th>Title</th>
+                    <th>title</th>
                     <th>price</th>
                     <th>quantity</th>
                     <th>image</th>
@@ -150,12 +166,19 @@ export const AdminPage = () => {
                     <td>
                         <input type="number" placeholder='quantity' onChange={addQuantity} value={newCard.quantity}/>
                     </td>
-                    <td><input type="link" placeholder='img (http....)' onChange={addImg} value={newCard.image}/>
+                    <td>
+                        <input type="link" placeholder='img (http....)' onChange={addImg} value={newCard.image}/>
                     </td>
                     <td>
                         <Button className='btn btn-primary'
                                 handleClick={addCard}
                                 text='add new product'/>
+                    </td>
+
+                    <td>
+                        <Button className='btn btn-outline-primary'
+
+                                text='some button'/>
                     </td>
                 </tr>
 
