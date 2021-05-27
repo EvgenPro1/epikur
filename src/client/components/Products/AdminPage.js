@@ -6,14 +6,17 @@ import Button from "../../../shared/components/Button/Button";
 import {
     createChangeProduct,
     _createGetProducts,
-    createSaveChangesProduct, createChangeOldField} from "../../../store/actionCreators";
+    createSaveChangesProduct, createChangeOldField
+} from "../../../store/actionCreators";
 import {
     deleteDocumentFromCollectionWithID,
     getCollection,
     setDocumentToCollection,
-    updateDocumentInCollection} from "../../../Firebase/helper";
+    updateDocumentInCollection
+} from "../../../Firebase/helper";
 
 import './AdminPage.css'
+import MainPreloader from "../MainPreloader/MainPreloader";
 
 const initialCard = {title: '', price: '', image: '', quantity: '', update: false}
 const defaultCollection = 'TestEpikur-223E23d2@#4f2ref2'
@@ -29,9 +32,9 @@ export const AdminPage = () => {
         })
     };
     const updateCardById = async ({update, ...rest}, idDocumnent, collection = defaultCollection) => {
-        updateDocumentInCollection(collection, rest, idDocumnent).then(r=>{
+        updateDocumentInCollection(collection, rest, idDocumnent).then(r => {
             dispatch(createSaveChangesProduct(idDocumnent))
-        }).catch(e=> {
+        }).catch(e => {
 
         })
     }
@@ -90,7 +93,7 @@ export const AdminPage = () => {
         }))
     }
     const makeChanges = (id) => {
-        const changedCard = products.find(({idPost})=> idPost === id)
+        const changedCard = products.find(({idPost}) => idPost === id)
         updateCardById(changedCard, id)
     }
 
@@ -111,18 +114,19 @@ export const AdminPage = () => {
     const productsList = products.map(({title, price, image, quantity, idPost, update}) => {
             const textChangeBtn = !update ? 'Change product' : 'Save changes'
             const textClassNameBtn = !update ? 'btn btn-outline-secondary' : 'btn btn-outline-warning'
-        return <>
+            return <>
                 <tr key={idPost} className='product-card'>
                     <td><input disabled={!update} value={title}
-                               onChange={(e)=>changeOldField(e, idPost, "title")}  /></td>
+                               onChange={(e) => changeOldField(e, idPost, "title")}/></td>
                     <td><input disabled={!update} value={price} type='number'
-                               onChange={(e)=>changeOldField(e, idPost, "price")}  /></td>
+                               onChange={(e) => changeOldField(e, idPost, "price")}/></td>
                     <td><input disabled={!update} value={quantity} type='number'
-                               onChange={(e)=>changeOldField(e, idPost, "quantity")}  /></td>
+                               onChange={(e) => changeOldField(e, idPost, "quantity")}/></td>
                     <td><img src={image} alt='' className="image"/></td>
                     <td>
                         <Button handleClick={() => changeProductById(idPost)} text={textChangeBtn}
-                                className={textClassNameBtn} tooltipText = "ВАЖНО! для сохранения данных обязательно нажимать 'Save changes' "/>
+                                className={textClassNameBtn}
+                                tooltipText="ВАЖНО! для сохранения данных обязательно нажимать 'Save changes' "/>
                     </td>
                     <td>
                         <Button handleClick={() => deleteProductById(idPost)} text='delete product'

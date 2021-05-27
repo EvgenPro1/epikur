@@ -1,0 +1,115 @@
+@import "main-styles.scss";
+@import "main-fonts.scss";
+
+.preloader__container2 {
+  z-index: 1;
+  background: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: -5%;
+  color: #151e27;
+  transform: scale(.7);
+  //transform: translate(-50%, -50%);
+  width: 40vw;
+  animation: 1s anim_logoEpikur__container2 3500ms ease-out forwards;
+}
+
+.preloader__container {
+  border-radius: 100%;
+  z-index: 1;
+  background: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40vw;
+  animation: 1s anim_logoEpikur__container 4s linear forwards;
+}
+
+.logoEpikur__path {
+  stroke-width: 40;
+  stroke-linejoin: round;
+  stroke: $main_color_dark_green;
+  fill: transparent;
+  stroke-dasharray: 1200%;
+  animation: 5s logoEpikur__path 0s linear forwards;
+}
+
+@keyframes logoEpikur__path {
+  0% {
+    stroke-dashoffset: 1200%;
+  }
+  85% {
+    fill: transparent;
+  }
+  100% {
+    fill: $main_color_dark_green;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes anim_logoEpikur__container {
+  to {
+    left: 0;
+    transform: translate(-10%, -50%) scale(0.7);
+  }
+}
+
+@keyframes anim_logoEpikur__container2 {
+
+  //
+  //0% {
+  //  top: 5%;
+  //}
+
+  to {
+    top: 5%;
+  }
+
+}
+
+.logoEpikur__path1 {
+  stroke-width: 20;
+  stroke-linejoin: round;
+  stroke: $main_color_dark_green;
+  fill: none;
+  stroke-dasharray: 2500%;
+  animation: 3s anim_logoEpikur__path1 0s linear forwards;
+}
+
+@keyframes anim_logoEpikur__path1 {
+  0% {
+
+    stroke-dashoffset: 2500%;
+  }
+  85% {
+    fill: transparent;
+  }
+  100% {
+    fill: $main_color_dark_green;
+    stroke-dashoffset: 0;
+  }
+}
+
+.logoEpikur__path2 {
+  stroke-width: 20;
+  stroke-linejoin: round;
+  stroke: $main_color_dark_green;
+  fill: transparent;
+  stroke-dasharray: 1500%;
+  animation: 1500ms logoEpikur__path2 0s linear forwards;
+}
+
+@keyframes logoEpikur__path2 {
+  0% {
+    stroke-dashoffset: 1500%; // 1 / 20 мигание
+  }
+  85% {
+    fill: transparent;
+  }
+  100% {
+    fill: $main_color_dark_green;
+    stroke-dashoffset: 0;
+
+  }
+}
