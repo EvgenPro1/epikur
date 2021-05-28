@@ -1,4 +1,3 @@
-
 .image {
     height: 50px;
     width: 50px;
@@ -9,7 +8,7 @@
 }
 
 body {
-    background-color: gray;
+    overflow-x: hidden;
 }
 
 .App {
@@ -46,13 +45,12 @@ body {
     animation-duration: 5s;
     box-sizing: border-box;
     animation-fill-mode: both;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 /*
 .first-images-block {
     display: flex;
     position: absolute;
-
 }
 
 .first-images {
@@ -65,7 +63,7 @@ body {
     animation-duration: 1s;
 }*/
 
-.head, .left-menu, .main-content, .foot {
+.head, .foot {
     border: 1px solid black;
     margin: 0;
 }
@@ -79,17 +77,19 @@ body {
     display: inline-block;
     height: 80%;
     box-sizing: border-box;
+    position: relative;
 }
 
-.left-menu {
+.left-menu, .main-content {
     width: 50%;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    padding: 3px;
 }
-
-.main-content {
-    width: 50%;
-    height: 1800px;
+.active {
+    /*background-color: blue;*/
 }
-
 
 @keyframes animation-children-content {
     0% {

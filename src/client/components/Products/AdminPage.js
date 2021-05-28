@@ -16,7 +16,7 @@ import {
 } from "../../../Firebase/helper";
 
 import './AdminPage.css'
-import MainPreloader from "../MainPreloader/MainPreloader";
+
 
 const initialCard = {title: '', price: '', image: '', quantity: '', update: false}
 const defaultCollection = 'TestEpikur-223E23d2@#4f2ref2'
