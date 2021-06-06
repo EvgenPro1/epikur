@@ -8,7 +8,6 @@ const Preloader = (props) => {
     const {classname, viewBox, path} = props
     return (
         <>
-
             <Svg
                 className={classname}
                 viewBox={viewBox}

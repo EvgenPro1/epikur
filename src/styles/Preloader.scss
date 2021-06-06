@@ -2,21 +2,31 @@
 @import "main-fonts.scss";
 
 .preloader__container2 {
-  z-index: 1;
-  background: #ffffff;
+  z-index: 3;
   position: absolute;
   top: 50%;
   left: -5%;
-  color: #151e27;
   transform: scale(.7);
-  //transform: translate(-50%, -50%);
   width: 40vw;
   animation: 1s anim_logoEpikur__container2 3500ms ease-out forwards;
+  transition: 1s;
+}
+
+.preloader__container2.smallLogo {
+  transform: scale(.3);
+  left: -13%;
+  top: -3.7% !important;
+}
+@keyframes anim_logoEpikur__container2 {
+  to {
+    top: -8px;
+  }
+
 }
 
 .preloader__container {
   border-radius: 100%;
-  z-index: 1;
+  z-index: 3;
   background: #ffffff;
   position: absolute;
   top: 50%;
@@ -24,17 +34,39 @@
   transform: translate(-50%, -50%);
   width: 40vw;
   animation: 1s anim_logoEpikur__container 4s linear forwards;
+  transition: 1s;
+}
+.second-preloader__container {
+  border-radius: 100%;
+  z-index: 1;
+  background: #ffffff;
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 25vw;
+  transition: 1000ms;
+  transform: scale(0.15);
+}
+.hiddenLogo {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes anim_logoEpikur__container {
+  to {
+    left: 20px;
+    transform: translate(-10%, -50%) scale(0.7);
+  }
 }
 
 .logoEpikur__path {
-  stroke-width: 40;
+  stroke-width: 100;
   stroke-linejoin: round;
   stroke: $main_color_dark_green;
   fill: transparent;
   stroke-dasharray: 1200%;
   animation: 5s logoEpikur__path 0s linear forwards;
 }
-
 @keyframes logoEpikur__path {
   0% {
     stroke-dashoffset: 1200%;
@@ -48,39 +80,22 @@
   }
 }
 
-@keyframes anim_logoEpikur__container {
-  to {
-    left: 0;
-    transform: translate(-10%, -50%) scale(0.7);
-  }
-}
 
-@keyframes anim_logoEpikur__container2 {
 
-  //
-  //0% {
-  //  top: 5%;
-  //}
-
-  to {
-    top: 5%;
-  }
-
-}
 
 .logoEpikur__path1 {
-  stroke-width: 20;
+  stroke-width: 100;
   stroke-linejoin: round;
   stroke: $main_color_dark_green;
   fill: none;
-  stroke-dasharray: 2500%;
+  stroke-dasharray: 3500%;
   animation: 3s anim_logoEpikur__path1 0s linear forwards;
 }
 
 @keyframes anim_logoEpikur__path1 {
   0% {
 
-    stroke-dashoffset: 2500%;
+    stroke-dashoffset: 3000%;
   }
   85% {
     fill: transparent;
@@ -92,17 +107,17 @@
 }
 
 .logoEpikur__path2 {
-  stroke-width: 20;
+  stroke-width: 100;
   stroke-linejoin: round;
   stroke: $main_color_dark_green;
   fill: transparent;
-  stroke-dasharray: 1500%;
+  stroke-dasharray: 1800%;
   animation: 1500ms logoEpikur__path2 0s linear forwards;
 }
 
 @keyframes logoEpikur__path2 {
   0% {
-    stroke-dashoffset: 1500%; // 1 / 20 мигание
+    stroke-dashoffset: 1800%; // 1 / 20 мигание
   }
   85% {
     fill: transparent;

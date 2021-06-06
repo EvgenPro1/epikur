@@ -116,11 +116,11 @@ export const AdminPage = () => {
             const textClassNameBtn = !update ? 'btn btn-outline-secondary' : 'btn btn-outline-warning'
             return <>
                 <tr key={idPost} className='product-card'>
-                    <td><input disabled={!update} value={title}
+                    <td><input className='input-TD' disabled={!update} value={title}
                                onChange={(e) => changeOldField(e, idPost, "title")}/></td>
-                    <td><input disabled={!update} value={price} type='number'
+                    <td><input className='input-TD2' disabled={!update} value={price} type='number'
                                onChange={(e) => changeOldField(e, idPost, "price")}/></td>
-                    <td><input disabled={!update} value={quantity} type='number'
+                    <td><input  className='input-TD3' disabled={!update} value={quantity} type='number'
                                onChange={(e) => changeOldField(e, idPost, "quantity")}/></td>
                     <td><img src={image} alt='' className="image"/></td>
                     <td>
@@ -151,7 +151,7 @@ export const AdminPage = () => {
                     <th>image</th>
                 </tr>
                 </thead>
-                <tbody id="book-list">
+                <tbody className='tbody' id="book-list">
 
                 <tr className='product-card'>
                     <td>
