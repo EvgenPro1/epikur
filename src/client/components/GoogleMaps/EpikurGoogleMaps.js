@@ -1,5 +1,12 @@
-import React, {memo} from 'react'
-import {GoogleMap, useJsApiLoader} from '@react-google-maps/api';
+import React, {memo, useEffect, useState} from 'react'
+import {GoogleMap, useJsApiLoader, Marker} from '@react-google-maps/api';
+import {
+    deleteDocumentFromCollectionWithID,
+    getCollection,
+    setDocumentToCollection,
+    updateDocumentInCollection
+} from "../../../Firebase/helper";
+import {_createGetProducts, createSaveChangesProduct} from "../../../store/actionCreators";
 
 const containerStyle = {
     width: '400px',
@@ -13,13 +20,32 @@ const googleMapCurrentProps = {
     },
     zoom: 17
 };
+const defaultCollection = 'MarkersEpikur' //Markers collection
 
 function EpikurGoogleMaps() {
+    const [arrMarkers, setArrMarkers] = useState([])
+
+    const getMarkersColl = async () => {
+        getCollection(defaultCollection).then(collection => {
+            setArrMarkers(collection)
+        })
+    };
+
+    useEffect(()=> {
+        getMarkersColl()
+    }, [])
+
 
     const {isLoaded} = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: "AIzaSyABwpKfqjcCgsGGcFY2dhpb02HUPt_U4vk"
     })
+
+    // const onLoad = marker => {
+    //     console.log('marker: ', marker)}
+    console.log(arrMarkers);
+
+    const markers = arrMarkers.map(marker=><Marker position={{lat:+marker.lat, lng: +marker.lng}}/>)
 
     return isLoaded ? (
         <GoogleMap
@@ -27,7 +53,8 @@ function EpikurGoogleMaps() {
             center={googleMapCurrentProps.center}
             zoom={googleMapCurrentProps.zoom}
         >
-            { /* Child components, such as markers, info windows, etc. */}
+            {markers}
+                       { /* Child components, such as markers, info windows, etc. */}
         </GoogleMap>
     ) : <></>
 }

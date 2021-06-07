@@ -116,6 +116,8 @@ export const HomePage = () => {
                             </p>
                             <a href="adminPage" className="closing-button btn-test"><span
                                 className='text-pseudo-button'>adminPage</span></a>
+                            <a href="GoogleMapsAdminPage" className="closing-button btn-test"><span
+                                className='text-pseudo-button'>GoogleMapsAdminPage</span></a>
                             <div className="page-number">01</div>
                         </main>
                     </container>

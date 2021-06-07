@@ -92,6 +92,7 @@ export const AdminPage = () => {
             image: e.target.value
         }))
     }
+
     const makeChanges = (id) => {
         const changedCard = products.find(({idPost}) => idPost === id)
         updateCardById(changedCard, id)
@@ -141,6 +142,8 @@ export const AdminPage = () => {
             <navbar className="navbar navbar-dark bg-primary products-nav-bar">
                 <NavLink className='navbar-brand' to='/'>Home</NavLink>
                 <NavLink className='navbar-brand' to='/AdminPage'>AdminPage</NavLink>
+                <NavLink className='navbar-brand' to='/GoogleMapsAdminPage'>Google-Maps-Admin</NavLink>
+
             </navbar>
             <table className="table table-striped position-relative admin-table">
                 <thead>

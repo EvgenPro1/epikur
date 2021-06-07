@@ -7,6 +7,7 @@ import './styles/Preloader.scss'
 import './bootstrap.min.css';
 import {HomePage} from "./client/pages/HomePage/HomePage";
 import {AdminPage} from "./client/components/Products";
+import GoogleMapsAdminPage from "./client/components/GoogleMapsAdminPage/GoogleMapsAdminPage";
 import {Provider} from "react-redux";
 import {store} from "./store/store";
 import "./styles/buttons-inputs-styles.css"
@@ -20,6 +21,7 @@ function App() {
             <Provider store={store}>
                 <Route exact path='/'><HomePage/></Route>
                 <Route exact path='/AdminPage'><AdminPage/></Route>
+                <Route exact path='/GoogleMapsAdminPage'><GoogleMapsAdminPage/></Route>
                 google-maps-key: AIzaSyABwpKfqjcCgsGGcFY2dhpb02HUPt_U4vk
             </Provider>
         </Router>
