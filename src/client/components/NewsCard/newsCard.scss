@@ -1,0 +1,45 @@
+@import "./src/styles/main-styles";
+
+.news-preview-image {
+width: 15%;
+  border-radius: 50px;
+
+}
+.photo-last-news{
+position: relative;
+  right: 1vw;
+}
+
+.news-preview-text {
+  text-overflow: ellipsis;
+
+}
+
+.news-preview-button {
+  margin-left: 10px;
+}
+
+.news-preview {
+
+}
+
+.news-preview-content {
+
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.news-card {
+  border: $main_color_dark_green 1px solid;
+  border-radius: 20px;
+  margin: 0 10%;
+  padding: 5px;
+}
+
+.newsCard {
+  width: 90%;
+}

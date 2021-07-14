@@ -1,1 +1,0 @@
-export homeHOC from './homeHOC'

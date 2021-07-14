@@ -80,17 +80,17 @@ const GoogleMapsAdminPage = () => {
             const textClassNameBtn = !update ? 'btn btn-outline-secondary' : 'btn btn-outline-warning'
             return <>
                 <tr key={idPost} className='product-card'>
-                    <td><input className='input-TD' disabled={!update} value={title}
+                    <td><input className='input-TD3' disabled={!update} value={title}
                                onChange={(e) => changeOldField(e, idPost, "title")}/></td>
-                    <td><input className='input-TD2' disabled={!update} value={lat} type='number'
+                    <td><input className='input-TD3' disabled={!update} value={lat} type='number'
                                onChange={(e) => changeOldField(e, idPost, "lat")}/></td>
                     <td><input  className='input-TD3' disabled={!update} value={lng} type='number'
                                 onChange={(e) => changeOldField(e, idPost, "lng")}/></td>
-                    <td>
-                        <Button handleClick={() => updateCardById(idPost, 3,4,)} text={textChangeBtn}
-                                className={textClassNameBtn}
-                                tooltipText="ВАЖНО! для сохранения данных обязательно нажимать 'Save changes' "/>
-                    </td>
+                    {/*<td>*/}
+                    {/*    <Button handleClick={() => updateCardById(idPost, 3,4,)} text={textChangeBtn}*/}
+                    {/*            className={textClassNameBtn}*/}
+                    {/*            tooltipText="ВАЖНО! для сохранения данных обязательно нажимать 'Save changes' "/>*/}
+                    {/*</td>*/}
                     <td>
                         <Button handleClick={() => deleteMarkerById(idPost)} text='delete product'
                                 className='btn btn-outline-danger'/>
@@ -102,17 +102,14 @@ const GoogleMapsAdminPage = () => {
 
     return (
         <>
-            <navbar className="navbar navbar-dark bg-primary products-nav-bar">
-                <NavLink className='navbar-brand' to='/'>Home</NavLink>
-                <NavLink className='navbar-brand' to='/AdminPage'>AdminPage</NavLink>
-                <NavLink className='navbar-brand' to='/GoogleMapsAdminPage'>Google-Maps-Admin</NavLink>
-            </navbar>
+
             <table className="table table-striped position-relative admin-table">
                 <thead>
                 <tr>
                     <th>title</th>
                     <th>lat</th>
                     <th>lng</th>
+                    <th>buttons</th>
                 </tr>
                 </thead>
                 <tbody className='tbody' id="book-list">
@@ -127,32 +124,32 @@ const GoogleMapsAdminPage = () => {
                     <td>
                         <input type="number" placeholder='quantity' onChange={(e)=>addMarkerValues(e, 'lng')} value={newMarker.lng}/>
                     </td>
-                    <td>
-                        {/*<input type="link" placeholder='img (http....)' onChange={addImg} value={newCard.image}/>*/}
-                    </td>
+                    {/*<td>*/}
+                    {/*    /!*<input type="link" placeholder='img (http....)' onChange={addImg} value={newCard.image}/>*!/*/}
+                    {/*</td>*/}
                     <td>
                         <Button className='btn btn-primary'
                             handleClick={addMarker}
                                 text='add new product'/>
                     </td>
 
-                    <td>
-                        <Button className='btn btn-outline-primary'
+                    {/*<td>*/}
+                    {/*    <Button className='btn btn-outline-primary'*/}
 
-                                text='some button'/>
-                    </td>
+                    {/*            text='some button'/>*/}
+                    {/*</td>*/}
                 </tr>
 
                 {markersList}
 
                 </tbody>
             </table>
-            <Button className='btn-warning
-            position-absolute
-            justify-content-center
-            left40 align-self-center'
-                    // handleClick={getCardsColl}
-                    text='Test button "getColl"'/>
+            {/*<Button className='btn-warning*/}
+            {/*position-absolute*/}
+            {/*justify-content-center*/}
+            {/*left40 align-self-center'*/}
+            {/*        // handleClick={getCardsColl}*/}
+            {/*        text='Test button "getColl"'/>*/}
         </>
     )
 };

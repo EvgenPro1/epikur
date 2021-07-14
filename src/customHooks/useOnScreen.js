@@ -1,10 +1,7 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 const useOnScreen = (ref, rootMargin = '0px') => {
-    // console.log(options);
-    // console.log(visibilityRef.current);
     const [isIntersecting, setIntersecting] = useState(false);
-
 
     useEffect(() => {
         const observer = new IntersectionObserver(

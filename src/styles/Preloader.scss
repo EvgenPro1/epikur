@@ -8,7 +8,7 @@
   left: -5%;
   transform: scale(.7);
   width: 40vw;
-  animation: 1s anim_logoEpikur__container2 3500ms ease-out forwards;
+  animation: 1s anim_logoEpikur__container2 2500ms ease-out forwards;
   transition: 1s;
 }
 
@@ -19,7 +19,9 @@
 }
 @keyframes anim_logoEpikur__container2 {
   to {
-    top: -8px;
+    top: -0.5vw;
+    left: -15vw;
+    transform: scale(0.2);
   }
 
 }
@@ -33,7 +35,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 40vw;
-  animation: 1s anim_logoEpikur__container 4s linear forwards;
+  animation: 2s anim_logoEpikur__container 3s linear forwards;
   transition: 1s;
 }
 .second-preloader__container {
@@ -53,40 +55,50 @@
 }
 
 @keyframes anim_logoEpikur__container {
-  to {
+  50% {
     left: 20px;
+    top:50%;
     transform: translate(-10%, -50%) scale(0.7);
+  }
+  75% {
+    top:-10.5vw;
+    left:-10vw;
+    transform: scale(0.06);
+  }
+
+  100% {
+    top:-17.5vw;
+    left:-9vw;
+    transform: scale(0.05);
+
   }
 }
 
 .logoEpikur__path {
   stroke-width: 100;
   stroke-linejoin: round;
-  stroke: $main_color_dark_green;
+  stroke: $main_color_light_green;
   fill: transparent;
-  stroke-dasharray: 1200%;
-  animation: 5s logoEpikur__path 0s linear forwards;
+  stroke-dasharray: 1000%;
+  animation: 4s logoEpikur__path 0s linear forwards;
 }
 @keyframes logoEpikur__path {
   0% {
-    stroke-dashoffset: 1200%;
+    stroke-dashoffset: 1000%;
   }
   85% {
     fill: transparent;
   }
   100% {
-    fill: $main_color_dark_green;
+    fill: $main_color_light_green;
     stroke-dashoffset: 0;
   }
 }
 
-
-
-
 .logoEpikur__path1 {
   stroke-width: 100;
   stroke-linejoin: round;
-  stroke: $main_color_dark_green;
+  stroke: $main_color_light_green;
   fill: none;
   stroke-dasharray: 3500%;
   animation: 3s anim_logoEpikur__path1 0s linear forwards;
@@ -95,13 +107,13 @@
 @keyframes anim_logoEpikur__path1 {
   0% {
 
-    stroke-dashoffset: 3000%;
+    stroke-dashoffset: 3500%;
   }
   85% {
     fill: transparent;
   }
   100% {
-    fill: $main_color_dark_green;
+    fill: $main_color_light_green;
     stroke-dashoffset: 0;
   }
 }
@@ -109,7 +121,7 @@
 .logoEpikur__path2 {
   stroke-width: 100;
   stroke-linejoin: round;
-  stroke: $main_color_dark_green;
+  stroke: $main_color_light_green;
   fill: transparent;
   stroke-dasharray: 1800%;
   animation: 1500ms logoEpikur__path2 0s linear forwards;
@@ -123,7 +135,7 @@
     fill: transparent;
   }
   100% {
-    fill: $main_color_dark_green;
+    fill: $main_color_light_green;
     stroke-dashoffset: 0;
 
   }

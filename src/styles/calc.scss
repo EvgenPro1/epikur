@@ -1,0 +1,131 @@
+@import "main-styles";
+.calc-parent-container{
+  position: relative;
+}
+.calc-container{
+  position: absolute;
+  right: -150%;
+  top: 10vw;
+  left: 5vw;
+  transition:1s 1s;
+  //border: 1px solid black;
+}
+.calc-animation{
+  right: 0;
+}
+
+.fakebackground-img{
+
+}
+
+//$calc-size: 5vw;
+
+.calculator{
+  //max-width: 350px;
+  //padding: 20px;
+  //background-image: url('./../img/logo_EPIKUR_PNG_2.png');
+  //background-size: 10px;
+  //color: black;
+  //background-image: url('./../img/філе гомілки — копия.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50px;
+  //font-size: 1vw;
+  //color: red;
+  width: 40vw;
+  height: 46vw;
+  //background-color: #fff;
+  //transform: scale($calc-size);
+}
+
+.calculator-input{
+  width: 5vw;
+}
+.pointer {
+  cursor: pointer;
+}
+.calc-input-block{
+margin: 0 5px 5px;
+}
+input[type='radio']:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -1vw;
+  left: 0;
+  position: relative;
+  background-color: white;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+input[type='radio']:checked, input[type='radio'] {
+  visibility:hidden;
+}
+
+input[type='radio']:checked:after{
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -1vw;
+  left: 0;
+  position: relative;
+  background-color: $main_color_green;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+.calculator-header{
+  //background-color: $main_color_green;
+  color: $main_color_dark_green;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+.calculator-body{
+  //background-color: lightgrey;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  //background-image: url('./../img/logo_EPIKUR_PNG_4.svg');
+  background-size: 10vw;
+  font-size: 1vw;
+  font-weight: bold;
+
+}
+
+.calculator-body-top{
+  color: $main_color_dark_green;
+}
+.calculator-body-bottom{
+  //margin-top: 11vw;
+  color: $main_color_dark_green;
+  font-weight: bold;
+  font-size: 2vw;
+  position: absolute;
+  top:26vw
+
+}
+.goal-item-block{
+margin: 0 1vw 0;
+}
+.bold{
+  font-weight: bold;
+}
+
+.select-border, .calculator-input{
+  border: solid 1px $main_color_green;
+  border-radius: 59px;
+  text-align: center;
+  &:focus{
+    outline: none;
+  }
+}
+
+.rad123{
+  border-radius: 50px;
+}

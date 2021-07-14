@@ -8,6 +8,7 @@ const currentTooltip = tooltipText?tooltipText:''
         <input type={type}
                value = {text}
                onClick={handleClick}
+
                className={newClassName}
                data-toggle="tooltip" data-placement="bottom" title={currentTooltip}
         />

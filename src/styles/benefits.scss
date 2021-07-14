@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import "main-styles";
 
 .first-pre-benefits-block {
-  height: 100vh;
+  //height: 75vh;
+}
+
+.first-pre-benefits-block-85{
+  width: 85vw;
 }
 
 .pre-benefits {
@@ -9,7 +14,7 @@
   font-family: 'Bebas Neue';
   font-size: 22px;
   font-weight: 300;
-  text-transform: uppercase;
+  //text-transform: uppercase;
 }
 
 .pre-benefits-2, .pre-benefits-5 {
@@ -17,12 +22,12 @@
 }
 
 
-.pre-benefits-4 {
-  font-family: "Formular Medium";
+.pre-benefits.pre-benefits-4 {
+  font-family: Formular-Medium;
 }
 
 .pre-benefits-6 {
-  font-family: Formular;
+  font-family: Formular-Regular;
 }
 
 .benefits.benefits-2 {
@@ -58,7 +63,7 @@
   position: relative;
   height: 5px;
   width: 100%;
-  background-color: palevioletred;
+  background-color: $main_color_red;
 }
 
 .line::after {
@@ -68,7 +73,7 @@
   top: -5px;
   width: 15px;
   height: 15px;
-  background: palevioletred;
+  background: $main_color_red;
   border-radius: 100%;
 }
 
@@ -127,6 +132,12 @@
   background: #727c7e;;
 }
 
+.aside-w-65{
+  height: 65vw;
+}
+.main-w-35{
+  height: 35vw;
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // BLOCK 1
@@ -135,7 +146,7 @@
   display: flex;
   flex-direction: column;
   padding: 4vh;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Bebas Neue';
   color: #727c7e;
 }
 .block1__small__container__right{
@@ -160,9 +171,11 @@
 .block__1__header {
   font-size: 30px;
   font-weight: bold;
+  font-family: Formular-Bold;
 }
 
 .block__1__text {
   justify-content: end;
   font-size: 15px;
+  font-family: Formular-Medium;
 }

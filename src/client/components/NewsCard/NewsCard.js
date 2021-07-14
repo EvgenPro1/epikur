@@ -1,0 +1,49 @@
+import React, {useState} from 'react';
+import Modal from 'react-bootstrap/Modal'
+import './newsCard.scss'
+
+const NewsCard = ({text, actual, date, image, title}) => {
+    const [show, setShow] = useState(false);
+
+    return (
+        <>
+            <div className="news-card">
+                <div className="news-preview d-flex flex-column">
+                    <h3 className="news-preview-title">{title}</h3>
+                    <div className="news-preview-content">
+                        <img src={image} className='news-preview-image' alt=""/>
+                        <div className="news-preview-text d-inline-flex col-10 text "><div className="wrap truncate">
+
+                        {text}</div></div>
+                        <div className='align-items-center justify-content-center col-2'>
+                            <span onClick={() => setShow(true)} className="closing-button btn-test"><span
+                            className='text-pseudo-button'>Дізнатися більше</span>
+                        </span></div>
+                    </div>
+                </div>
+
+                <Modal
+                    show={show}
+                    onHide={() => setShow(false)}
+                    // dialogClassName="modal-90w"
+                    aria-labelledby="example-custom-modal-styling-title"
+                >
+                    <Modal.Header closeButton>
+                        <Modal.Title id="example-custom-modal-styling-title">
+                            {title}
+                        </Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <div className='d-flex align-items-center flex-column'>
+                        <img className='w-100' src={image} alt=""/>
+                        <p>
+                            {text}
+                        </p></div>
+                    </Modal.Body>
+                </Modal>
+            </div>
+        </>
+    );
+};
+
+export default NewsCard;

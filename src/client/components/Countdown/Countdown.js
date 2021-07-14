@@ -48,7 +48,7 @@ const Countdown = ({firstText ='', secondText='', startCounting = true , num = 8
 export default Countdown;
 /*
 import React from 'react';
-import '../../../styles/cards.css'
+import '../../../styles/cards.scss'
 
 const Cards = ({children, frontContent, backPhotoLink, height = '320px', width = '480px'}) => {
     return (

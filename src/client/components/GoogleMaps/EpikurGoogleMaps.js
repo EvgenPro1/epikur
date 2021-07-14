@@ -9,8 +9,8 @@ import {
 import {_createGetProducts, createSaveChangesProduct} from "../../../store/actionCreators";
 
 const containerStyle = {
-    width: '400px',
-    height: '400px'
+    width: '50vw',
+    height: '40vw'
 };
 
 const googleMapCurrentProps = {
@@ -49,6 +49,7 @@ function EpikurGoogleMaps() {
 
     return isLoaded ? (
         <GoogleMap
+
             mapContainerStyle={containerStyle}
             center={googleMapCurrentProps.center}
             zoom={googleMapCurrentProps.zoom}
