@@ -45,7 +45,8 @@ aside, main, .footer-block, .container1, .head, body {
 }
 
 #root{
-  overflow: hidden;
+  overflow: hidden!important;
+  max-width: 100vw!important;
   background-color: #fff;
 }
 
@@ -96,18 +97,7 @@ aside, main, .footer-block, .container1, .head, body {
 
 }
 
-.head {
-  position: sticky;
-  border: 1px solid #079500;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  background-color: #fff;
-  transition: 1s;
-  margin-bottom: 1vw;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-}
+
 
 .foot {
   //border-bottom: 1px solid #079500;

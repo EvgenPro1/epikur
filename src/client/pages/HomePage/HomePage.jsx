@@ -1,7 +1,7 @@
 import React, {useRef} from "react"
 import ReactPlayer from 'react-player'
 
-import Preloader from "../../components/Preloader/Preloader";
+import Preloader from "../../components/PreloaderHeader/Preloader";
 import LogoEpikur from "../../components/Svg/Images/LogoEpikur";
 import LogoEpikur2 from "../../components/Svg/Images/LogoEpikur2";
 import useOnScreen from "../../../customHooks/useOnScreen";
@@ -25,6 +25,15 @@ import NewsCarousel from "../../components/Carousel/NewsCarousel";
 import MyCarousel from "../../components/MyCarousel/MyCarousel";
 
 export const HomePage = () => {
+    /**Prelodaer
+     * 1. HEader using ...
+     * Block1
+     * Block1
+     * Block1
+     * Block1
+     * Block1
+     * Block1
+     */
     const ref = useRef()
     const visible = useOnScreen(ref, "10px")
     const ref2 = useRef()
@@ -38,11 +47,24 @@ export const HomePage = () => {
     const visibleCard = useOnScreen(ref3, "-250px")
 
     return <>
+        {/**Prelodaer
+            * 1. HEader using ...
+            * Block1
+            * Block1
+            * Block1
+            * Block1
+            * Block1
+            * Block1
+        */}
+
+
+
         <Preloader
             // classname={visibleLogo || visible || visible3 ? "preloader__container2 smallLogo" : "preloader__container2"} //epikur
             classname="preloader__container2" //epikur
             viewBox='0 420 3360.000000 490.000000'
-            path={<LogoEpikur2/>}/>
+            path={<LogoEpikur2/>}
+        />
 
         <MyComponent classname={visibleLogo || visible || visible3 ? "preloader-small-logo" : "preloader-big-logo"}/>
 
@@ -50,7 +72,8 @@ export const HomePage = () => {
             // classname={visibleLogo || visible || visible3 ? "preloader__container hiddenLogo" : "preloader__container"} //lapka
             classname="preloader__container" //lapka
             viewBox='0 0 1335.000000 1335.000000'
-            path={<LogoEpikur/>}/>
+            path={<LogoEpikur/>}
+        />
 
 
         <div className='d-flex justify-content-center align-items-center home-page-block'>
@@ -72,6 +95,9 @@ export const HomePage = () => {
 
                         </aside>
                         <main className="main-content-last-news">
+                            {/*************************************************
+                             Componennt foier preloader
+                            *************************************************/}
                             {/*<div className="top-bottom-anim-border"/>*/}
                             {/*<div className="left-right-anim-border"/>*/}
                             {/*<p className="d-flex align-items-center justify-content-start">*/}
@@ -183,19 +209,21 @@ export const HomePage = () => {
                             {/*</Cards>*/}
 
                             <div className='product-carousel-block pl-2 pr-2'><ProductsCarousel sortBy='price'/></div>
-                            <div className='product-carousel-block-2 pl-2 pr-2'><ProductsCarousel sortBy='quantity'/></div>
+                            <div className='product-carousel-block-2 pl-2 pr-2'><ProductsCarousel sortBy='quantity'/>
+                            </div>
                         </aside>
                         <main className='main-content calc-parent-container pr-2'>
                             {/*<div className={visible2 ? "left-right-anim-border" : ""}/>*/}
                             {/*<div className={visible2 ? "top-bottom-anim-border" : ""}/>*/}
-                            {/*<ProductsCarousel/>*/}
-<div className="position-relative mb-2">
-                            {/*<img className='fakebackground-img'*/}
-                            {/*     width="100%"*/}
-                            {/*     height="100%"*/}
-                            {/*     src={fakeBackground} alt=""/>*/}
-                            <div className={!visible2 ? "calc-container" : "calc-container calc-animation"}>
-                                <Calc/></div></div>
+                            {/**<ProductsCarousel/>*/}
+                            <div className="position-relative mb-2">
+                                {/*<img className='fakebackground-img'*/}
+                                {/*     width="100%"*/}
+                                {/*     height="100%"*/}
+                                {/*     src={fakeBackground} alt=""/>*/}
+                                <div className={!visible2 ? "calc-container" : "calc-container calc-animation"}>
+                                    <Calc/></div>
+                            </div>
                             {/*<div className={"block1__container"}>*/}
 
                             <div ref={refLogo} className={"block1__small__container__right"}/>
@@ -275,8 +303,16 @@ export const HomePage = () => {
                             <div className={"block1__container"}>
                                 <div className={"block1__small__container__left"}>
                                     <h3 className={"block__1__header"}>Виробництво ТМ “Епікур”</h3>
-                                    <div className={"block__1__text"}> Виробництво ТМ “Епікур” — це просторі пташники й доглянуті курочки, що зростають на натуральних рослинних кормах і чистій воді. Це свіже волинське повітря й перевірені європейські технології, що допомагають виробляти ніжне та якісне куряче м’ясо без використання стимуляторів росту та антибіотиків для профілактики. Все це для того, щоб наші покупці справді відчували себе здоровими.
-                                        У виробництві курятини Епікур, антибіотики – відсутні на всіх етапах. Це підтверджують регулярні аналізи в державних профільних лабораторіях на 10-й, 20-й, 30-й та 42-й день вирощування курки , та додаткові лабораторні дослідження курятини перед пакуванням.
+                                    <div className={"block__1__text"}> Виробництво ТМ “Епікур” — це просторі пташники й
+                                        доглянуті курочки, що зростають на натуральних рослинних кормах і чистій воді.
+                                        Це свіже волинське повітря й перевірені європейські технології, що допомагають
+                                        виробляти ніжне та якісне куряче м’ясо без використання стимуляторів росту та
+                                        антибіотиків для профілактики. Все це для того, щоб наші покупці справді
+                                        відчували себе здоровими.
+                                        У виробництві курятини Епікур, антибіотики – відсутні на всіх етапах. Це
+                                        підтверджують регулярні аналізи в державних профільних лабораторіях на 10-й,
+                                        20-й, 30-й та 42-й день вирощування курки , та додаткові лабораторні дослідження
+                                        курятини перед пакуванням.
                                     </div>
                                 </div>
                             </div>
@@ -287,7 +323,13 @@ export const HomePage = () => {
                             <div className={"block1__container"}>
                                 <div className={"block1__small__container__right"}>
                                     <h3 className={"block__1__header"}>Переваги курятини ТМ Епікур”</h3>
-                                    <div className={"block__1__text"}> Продукція ТМ” Епікур” - це більше ніж смачна й корисна курочка без антибіотиків та інших стимуляторів росту. Вона покликана допомагати кожній людині вести здорове та щасливе життя й будувати його для близьких. Ми мріємо про щасливе суспільство, що вміє радіти дрібницям й цінувати кожну мить. І наша курочка в досягнення цієї мети стає важливим інгредієнтом збалансованої дієти — це маленький, але важливий крок до життя, сповненого енергії, перемог та вдосконалень.
+                                    <div className={"block__1__text"}> Продукція ТМ” Епікур” - це більше ніж смачна й
+                                        корисна курочка без антибіотиків та інших стимуляторів росту. Вона покликана
+                                        допомагати кожній людині вести здорове та щасливе життя й будувати його для
+                                        близьких. Ми мріємо про щасливе суспільство, що вміє радіти дрібницям й цінувати
+                                        кожну мить. І наша курочка в досягнення цієї мети стає важливим інгредієнтом
+                                        збалансованої дієти — це маленький, але важливий крок до життя, сповненого
+                                        енергії, перемог та вдосконалень.
                                     </div>
                                 </div>
                             </div>
@@ -298,10 +340,11 @@ export const HomePage = () => {
                 {/*<MyCarousel/>*/}
                 <div ref={ref4} className="position-relative h-100 footer-block">
                     <div className={visible4 ? "map-parent-block-visible map-parent-block h-100" : "map-parent-block"}>
-                        <EpikurGoogleMaps/></div>
-                    <div
-                        className={visible4 ? "contacts-parent-block-visible h-100 contacts-parent-block" : "contacts-parent-block"}>
-                        <Contacts/></div>
+                        <EpikurGoogleMaps/>
+                    </div>
+                    <div className={visible4 ? "contacts-parent-block-visible h-100 contacts-parent-block" : "contacts-parent-block"}>
+                        <Contacts/>
+                    </div>
                 </div>
 
                 {/*<div className="d-flex justify-content-center mt-1 mb-1 align-items-center">*/}

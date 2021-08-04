@@ -1,30 +1,121 @@
 @import "./main-styles.scss";
+$stroke_width: 30;
+//////////////////////////////////////////////////////////////////////////////////////////
+// TEXT Load
+//////////////////////////////////////////////////////////////////////////////////////////
+.header__text__load__container {
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 5vw;
+    height: 12vh;
+    padding: 4vh;
+    //animation: 1s header__text__load__container 4s ease-out forwards;
+    transition: .1s;
+}
+@keyframes header__text__load__container {
+    to {
 
+    }
+}
+.header__text__load__path {
+    stroke-width: $stroke_width *2;
+    stroke-linejoin: round;
+    stroke: transparent;
+    fill: transparent;
+    stroke-dasharray: 1800%;
+    animation: 1.5s header__text__load__container 4s linear forwards;
+}
+@keyframes header__text__load__container {
+    0% {
+        stroke: $main_color_white;
+        stroke-dashoffset: 1800%; // 1 / 20 мигание
+    }
+    85% {
+        fill: transparent;
+    }
+    100% {
+        stroke: $main_color_white;
+        fill: $main_color_white;
+        stroke-dashoffset: 0;
+    }
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+// Another containers
+//////////////////////////////////////////////////////////////////////////////////////////
+.head {
+    position: absolute;
+    z-index: 999;
+    width: 100vw;
+    height: 12vh;
+    padding: 2vh;
+    top: -12vh;
+    left: 0;
+    background-color: $main_color_green;
+    transition: 1s;
+    margin-bottom: 1vw;
+    overflow: hidden;
+    animation: 1s head 3s ease-in-out forwards;
+}
+@keyframes head {
+    from{
+        top: -12vh;
+    }
+    to{
+        top: 0px;
+    }
 
+}
+.header__dark__round__back{
+    position: absolute;
+    background-color: $main_color_dark_green;
+    border-radius: 50%;
+    height: 150vw;
+    width: 150vw;
+    top: -40vw;
+    right: -75vw;
+    animation: 10s header__dark__round__back 3s ease-in-out infinite;
+}
+@keyframes header__dark__round__back {
+    from{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+
+    to{
+        transform: scale(1);
+    }
+}
 .container-burger-menu{
-    position: relative;
-    top: 0px;
+    position: absolute;
+    top: 0;
     right: 0;
-    height: 100px;
-    width: 100px;
+    width: 7vh;
     z-index: 5;
+    margin: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu-items {
     list-style: none;
     margin: 5px;
     padding: 0;
-    background-color: $main_color_dark_green;
-}
-
-.burger-menu, .burger-menu-label {
-    position: absolute;
-    top: 0;
-    right: 0;
+    background-color: transparent;
 }
 
 .burger-menu {
-    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.burger-menu-label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .burger-menu-input[type=checkbox] {
@@ -33,7 +124,7 @@
 
 .burger-menu-input[type=checkbox]:checked + .drawer-list {
     transform: translatex(0);
-    border-bottom-left-radius: 0;
+    //border-bottom-left-radius: 0;
 }
 
 .burger-menu-input[type=checkbox]:checked + .drawer-list .burger-menu-item {
@@ -253,16 +344,16 @@ menu input[type=checkbox]:checked + .drawer-list li:nth-child(50) {
     transform: translate(-50%, -50%) rotate(315deg);
 }
 
-menu input[type=checkbox]:checked ~ .hamburger > i:after {
+.menu input[type=checkbox]:checked ~ .hamburger > i:after {
     transform: translate(-50%, -50%) rotate(-315deg);
 }
 
-menu input[type=checkbox]:checked ~ .burger-menu-close {
-    color: rgb(30, 85, 50);
+.menu input[type=checkbox]:checked ~ .burger-menu-close {
+    //color: $main_color_light_green;
     width: 100%;
 }
 
-menu input[type=checkbox]:checked ~ .burger-menu-open {
+.menu input[type=checkbox]:checked ~ .burger-menu-open {
     color: transparent;
     width: 0;
 }
@@ -278,11 +369,11 @@ menu input[type=checkbox]:checked ~ .burger-menu-open {
     -ms-transform: translatex(-100vw);
     box-sizing: border-box;
     pointer-events: none;
-    padding-top: 125px;
+    padding-top: 15vh;
     transition: width 475ms ease-out, transform 450ms ease, border-radius .8s .1s ease;
-    border-bottom-left-radius: 100vw;
+    border-bottom-left-radius: 10vw;
     /*background-color: #3d81c0;*/
-    background-color: rgba(30, 85, 50, 1);
+    background-color: $main_color_light_green;
 }
 
 @media (min-width: 768px) {
@@ -322,11 +413,11 @@ menu input[type=checkbox]:checked ~ .burger-menu-open {
     color: white;
     text-align: center;
     display: block;
-    padding: .5rem;
+    //padding: .5rem;
     font-size: 1.2em;
 }
 .burger-menu-item{
-    background-color: $main-color_dark_green;
+    //background-color: $main_color_light_green;
 }
 
 @media (min-width: 768px) {
@@ -343,17 +434,17 @@ menu input[type=checkbox]:checked ~ .burger-menu-open {
 .burger-menu .drawer-list li a:hover {
     cursor: pointer;
     transform: scale(1.1);
-    margin-right: 40px;
+    margin-right: 20px;
 
     /*background-color: #88c2f8;*/
     /*background-color: rgba(17, 132, 240, 0.5);*/
 }
 
 .burger-menu .hamburger {
-    position: absolute;
+    //position: absolute;
     display: block;
-    top: 20px;
-    right: 20px;
+    top: 0px;
+    right: 0px;
     height: 50px;
     width: 50px;
 }
@@ -387,10 +478,11 @@ menu input[type=checkbox]:checked ~ .burger-menu-open {
 .burger-menu .hamburger > i {
     position: absolute;
     width: 100%;
-    height: 2px;
+    height: 3px;
+    border-radius: 5px;
     right: 0;
     top: 50%;
-    background-color: rgb(90, 160, 50);
+    background-color: $main_color_white;
     pointer-events: auto;
     transition-duration: .35s;
     transition-delay: .35s;
@@ -400,9 +492,10 @@ menu input[type=checkbox]:checked ~ .burger-menu-open {
     position: absolute;
     display: block;
     width: 100%;
-    height: 2px;
+    height: 3px;
+    border-radius: 5px;
     left: 50%;
-    background: rgb(90, 160, 50);
+    background: $main_color_white;
     content: "";
     transition: transform 0.35s;
     transform-origin: 50% 50%;

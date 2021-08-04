@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "4": "^0.0.0",
+    "@firebase/webchannel-wrapper": "^0.5.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
@@ -11,6 +12,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "bootstrap": "5.0.2",
     "firebase": "^8.6.1",
     "framer-motion": "^4.1.17",
     "moment": "^2.29.1",
@@ -24,8 +26,10 @@
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-scroll-parallax": "^2.4.0",
     "react-vivus": "^0.0.2",
     "redux": "^4.1.0",
+    "video-react": "^0.14.1",
     "vivus": "^0.4.6",
     "web-vitals": "^1.0.1"
   },

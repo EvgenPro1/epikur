@@ -8,7 +8,7 @@ const BurgerMenu = () => {
 
     return (
         <container className ='container-burger-menu'>
-            <menu className="burger-menu">
+            <div className="menu burger-menu">
                 <label className="burger-menu-label" htmlFor="trigger">
                     <input className="burger-menu-input" id="trigger" type="checkbox"/>
                     <section className="drawer-list">
@@ -18,7 +18,7 @@ const BurgerMenu = () => {
                     </section>
                     <div className='hamburger'><i/></div>
                 </label>
-            </menu>
+            </div>
         </container>
     );
 };

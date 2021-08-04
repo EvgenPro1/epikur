@@ -9,8 +9,8 @@ import {
 import {_createGetProducts, createSaveChangesProduct} from "../../../store/actionCreators";
 
 const containerStyle = {
-    width: '50vw',
-    height: '40vw'
+    width: '100%',
+    height: '100%'
 };
 
 const googleMapCurrentProps = {
