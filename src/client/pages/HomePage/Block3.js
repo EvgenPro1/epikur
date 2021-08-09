@@ -12,19 +12,19 @@ import Calc from "../../../shared/components/Calc/Сalc";
 const Block3 = () => {
     return (
         <div className={'block__3__container'}>
-            <div className={'block__3__round__dark'}></div>
+            <div className={'block__3__round__dark'}/>
             <Preloader
                 classname="block__3__logo__lapka__container" //lapka
                 viewBox='0 0 1335.000000 1335.000000'
                 path={<Block3LogoLapka/>}
             />
 
-            <Row className={''}>
+            <Row className={'align-items-center'}>
                 <Col md={6} className={'block__3__left__container'}>
                     <div className={'block__3__header'}>
                         <div className={'Formular-Light inline block__3__header__text__1'}>{'ПОРАХУЙ '}</div>
                         <div className={'inline text__space'}>{' '}</div>
-                        <div className={'Bebas-Neue-Bold inline block__3__header__text__2'}>КАЛОРІЇ</div>
+                        <div className={'Formular-Light inline block__3__header__text__1'}>КАЛОРІЇ</div>
                     </div>
 
                     <ParallaxProvider>
@@ -37,7 +37,7 @@ const Block3 = () => {
                     </ParallaxProvider>
 
                 </Col>
-                <Col md={6} className={'block__3__calc__container'}>
+                <Col md={6} className={'block__3__calc__container h-75 pt-3'}>
 
                     <div className={'block__3__calc__container__inner'}>
                         <Calc/>

@@ -32,36 +32,36 @@ const Block4 = () => {
             </div>
 
 
-            <div className={'block__4__egg1__container'}>
-                <ParallaxProvider>
-                    <Parallax
-                        y={[-75, 75]} tagOuter="figure"
-                        slowerScrollRate
-                        tag="figure">
-                        <img src={egg1} alt="egg1" className={'block__4__egg1'}/>
-                    </Parallax>
-                </ParallaxProvider>
-            </div>
-            <div className={'block__4__egg2__container'}>
-                <ParallaxProvider>
-                    <Parallax
-                        y={[-50, 50]} tagOuter="figure"
-                        slowerScrollRate
-                        tag="figure">
-                        <img src={egg2} alt="egg1" className={'block__4__egg2'}/>
-                    </Parallax>
-                </ParallaxProvider>
-            </div>
-            <div className={'block__4__egg3__container'}>
-                <ParallaxProvider>
-                    <Parallax
-                        y={[-100, 100]} tagOuter="figure"
-                        slowerScrollRate
-                        tag="figure">
-                        <img src={egg3} alt="egg1" className={'block__4__egg3'}/>
-                    </Parallax>
-                </ParallaxProvider>
-            </div>
+            {/*<div className={'block__4__egg1__container'}>*/}
+            {/*    <ParallaxProvider>*/}
+            {/*        <Parallax*/}
+            {/*            y={[-75, 75]} tagOuter="figure"*/}
+            {/*            slowerScrollRate*/}
+            {/*            tag="figure">*/}
+            {/*            <img src={egg1} alt="egg1" className={'block__4__egg1'}/>*/}
+            {/*        </Parallax>*/}
+            {/*    </ParallaxProvider>*/}
+            {/*</div>*/}
+            {/*<div className={'block__4__egg2__container'}>*/}
+            {/*    <ParallaxProvider>*/}
+            {/*        <Parallax*/}
+            {/*            y={[-50, 50]} tagOuter="figure"*/}
+            {/*            slowerScrollRate*/}
+            {/*            tag="figure">*/}
+            {/*            <img src={egg2} alt="egg1" className={'block__4__egg2'}/>*/}
+            {/*        </Parallax>*/}
+            {/*    </ParallaxProvider>*/}
+            {/*</div>*/}
+            {/*<div className={'block__4__egg3__container'}>*/}
+            {/*    <ParallaxProvider>*/}
+            {/*        <Parallax*/}
+            {/*            y={[-100, 100]} tagOuter="figure"*/}
+            {/*            slowerScrollRate*/}
+            {/*            tag="figure">*/}
+            {/*            <img src={egg3} alt="egg1" className={'block__4__egg3'}/>*/}
+            {/*        </Parallax>*/}
+            {/*    </ParallaxProvider>*/}
+            {/*</div>*/}
             <div className={'block__4__img4__container'}>
                 <ParallaxProvider>
                     <Parallax

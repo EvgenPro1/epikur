@@ -9,7 +9,7 @@ const Block1 = () => {
     return (
         <div className={'block__1__container'}>
 
-            <div className={'home__dark__round__back'}></div>
+            {/*<div className={'home__dark__round__back'}/>*/}
             <Row className={'height__width__100'}>
                 <Col md={6} className={'height__width__100'}>
                     {/*<p className={'Formular-Regular'}>Formular-Regular HELLO hello привет ЗДОРОВА world 123</p>*/}
@@ -27,7 +27,7 @@ const Block1 = () => {
                         <h1 className={'Bebas-Neue-Bold left__margin__2'}>MAX PROTEIN</h1>
                         <h1 className={'Bebas-Neue-Bold left__margin__2'}>MIN FAT</h1>
                         <div className={'block__1__left__card__text__red__line'}>
-                            <div className={'Bebas-Neue-Regular left__margin__2'}>БЕЗ АНТИБІОТИКІВ ТА ГОРМОНІВ РОСТУ</div>
+                            <div className={'Bebas-Neue-Regular left__margin__2'}>БЕЗ АНТИБIOТИКIВ ТА ГОРМОНIВ РОСТУ</div>
                         </div>
 
                     </div>

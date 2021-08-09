@@ -205,6 +205,9 @@
   display: inline-block;
 }
 .block__3__calc__container{
+  position: absolute;
+  bottom: 2vh;
+  right: 1vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -284,7 +287,7 @@
 
   body {
     height: auto;
-    max-height: auto
+    max-height: auto;
   }
 }
 @media screen and (max-width: 400px) {
@@ -726,7 +729,7 @@ width: 100%;
 /////////////////////////////////////////////////////////////////////////////
 .block__7__container{
   position: relative;
-  height: 120vh;
+  height: 100%;
   width: 100vw;
   //margin: 5vh;
   padding-top: 30vh;
@@ -810,7 +813,7 @@ width: 100%;
   bottom: 0;
   width: 100vw;
   min-height: 50vh;
-  overflow: hidden;
+  //overflow: hidden;
 }
 .block__8__footer__img1{
   position: absolute;
@@ -874,3 +877,44 @@ width: 100%;
   right: -75vw;
   animation: 10s header__dark__round__back 0s ease-in-out infinite;
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// media
+//////////////////////////////////////////////////////////////////////////////////////////
+
+@media (max-width: 767px) {
+  .preloader__container {
+    display: none;
+  }
+  .block__1__container {
+    height: 86vh;
+    width: 100vw;
+    padding-top: 4vh;
+  }
+  .block__1__left__card__text {
+    margin: 0 20px;
+  }
+  .block__3__calc__container {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 530px) {
+  .block__1__container {
+    height: 72vh;
+    width: 100vw;
+    padding-top: 0;
+
+  }
+  .block__1__left__card__text {
+    margin-top: 8vh !important;
+  }
+
+  }
+
+@media (max-width: 375px) {
+  .block__1__container {
+    height: 72vh;
+  }
+  }

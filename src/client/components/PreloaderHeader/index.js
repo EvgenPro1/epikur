@@ -4,6 +4,9 @@ import LogoEpikur2 from "../Svg/Images/LogoEpikur2";
 import LogoEpikur from "../Svg/Images/LogoEpikur";
 import LogoTextHeader from "../Svg/Images/LogoTextHeader";
 import BurgerMenu from "../../../shared/components/Bugrer-menu/Burger-menu";
+import LogoTextBlock1 from "../Svg/Images/LogoTextBlock1";
+import FullLogoEpikur from "../Svg/Images/FullLogoEpikur";
+import MyComponent from "../../../shared/components/Vivus/vivus";
 
 const Index = () => {
     return (
@@ -24,13 +27,13 @@ const Index = () => {
                 viewBox='0 420 3360.000000 490.000000'
                 path={<LogoEpikur2/>}
             />
-            <header className="head text-center head-sticky d-flex align-items-center justify-content-end">
+            <header className="head text-center head-sticky d-flex align-items-center justify-content-between">
                 <Preloader
-                    classname="header__text__load__container"
-                    viewBox='0 420 3360.000000 490.000000'
-                    path={<LogoTextHeader/>}
+                    classname="header__text__load__container" //[ лапка, текст ]
+                    viewBox="0 0 12169.000000 1860.000000"
+                    path={<FullLogoEpikur/>}
                 />
-                <div className={'header__dark__round__back'}></div>
+                <div className={'header__dark__round__back'}/>
                 <BurgerMenu/>
             </header>
         </div>

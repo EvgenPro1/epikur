@@ -4,6 +4,11 @@
   height: 900px !important;
 }
 
+body{
+  overflow-x: hidden;
+  width: 100vw;
+}
+
 .react-player-block {
   border-radius: 50px;
   border: $main_color_light_green 1px solid;

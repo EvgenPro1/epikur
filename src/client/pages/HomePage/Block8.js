@@ -10,8 +10,8 @@ const Block8 = () => {
         <div className={'block__8__container'}>
             {/*<div className={'block__8__round__dark'}></div>*/}
             <Row className={'width100__height100'}>
-                <Col md={6}></Col>
-                <Col md={6}>
+                <Col md={6} xs = {3}></Col>
+                <Col md={6} xs = {9}>
                     <div className={'block__8__map__container'}>
                         <EpikurGoogleMaps/>
                     </div>

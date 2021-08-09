@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from 'react';
+import {isMobile} from "react-device-detect";
+
 import PreloaderHeader from "../../components/PreloaderHeader/index";
 import Block1 from "./Block1";
 import Block2 from "./Block2";
@@ -14,18 +16,18 @@ import Block8 from "./Block8";
 const Home = () => {
     const [show, setShow] = useState(false);
     useEffect(() => {
+
         setTimeout(() => {
             setShow(true)
         }, 3000);
     }, []);
-
     return (
         <>
             <PreloaderHeader/>
             {show && (
                 <>
                     <Block1/>
-                    <Block2/>
+                    {(!isMobile) && <Block2/>}
                     <Block3/>
                     <Block4/>
                     <Block5/>

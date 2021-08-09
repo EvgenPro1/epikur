@@ -168,5 +168,77 @@ $stroke_width: 30;
 }
 
 
+//////////////////////////////////////////////////////////////////////////////////////////
+// media
+//////////////////////////////////////////////////////////////////////////////////////////
+
+@media (max-width: 768px) {
+
+}
+
+
+
+@media (max-width: 1400px) {
+  .header__text__load__container {
+    left: 15vw;
+  }
+  .container-burger-menu {
+    //width: 6vw;
+  }
+}
+
+@media (max-width: 850px) {
+  .header__text__load__container {
+    left: 10vw;
+  }
+  .container-burger-menu {
+    //width: 70px;
+  }
+  .header__text__load__container {
+    //transform: scale(2);
+  }
+}
+
+@media (max-width: 530px) {
+  .header__text__load__container {
+    left: 5vw;
+    top: -20px;
+    height: 8vh;
+    padding: 2vh;
+  }
+
+  .container-burger-menu {
+    //width: 70px;
+  }
+  .header__text__load__container {
+    //transform: scale(1.5);
+  }
+  .head{
+    height: 6vh;
+  }
+}
+
+
+@media (max-width: 450px) {
+  .header__text__load__container {
+    left: 0;
+  }
+  .header__text__load__container {
+    //transform: scale(1);
+  }
+}
+@media (max-width: 360px) {
+  .header__text__load__container {
+    left: -7vw;
+  }
+  .header__text__load__container {
+    //transform: scale(.8);
+  }
+  .container-burger-menu {
+    //width: 50px;
+  }
+
+}
+
 
 
