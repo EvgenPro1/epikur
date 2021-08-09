@@ -34,7 +34,6 @@ const product = [
 const Block7 = () => {
     return (
         <div className={'block__7__container'}>
-
             {product.map( (m, index) => (
                 <div className={'card__container'} key={index}>
                     <div className={'card__img__container'} style={{animation: '5s card__img__container ' + index * 0.5 + 's ease-in-out infinite'}}>

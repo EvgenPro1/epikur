@@ -1,25 +1,28 @@
 @import "main-styles.scss";
 @import "main-fonts.scss";
 
-.row{
-  margin: 0!important;
-  padding: 0!important;
-}
-.col{
-  margin: 0!important;
-  padding: 0!important;
-}
-.row>*{
-  margin-top: 0!important;
-  margin-right: 0!important;
-  margin-left: 0!important;
-}
-.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto{
-  padding-right: 0!important;
-  padding-left: 0!important;
+.row {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-.height__width__100{
+.col {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.row > * {
+  margin-top: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.height__width__100 {
   height: 100%;
   width: 100%;
 }
@@ -27,37 +30,53 @@
 /////////////////////////////////////////////////////////////////////////////
 // Block1
 /////////////////////////////////////////////////////////////////////////////
-.block__1__container{
+.block__1__container {
   position: relative;
   height: 100vh;
   width: 100vw;
   padding-top: 14vh;
 }
-.block__1__left__card__text{
+
+.block__1__left__card__text {
   position: absolute;
   color: $main_color_white;
   background-color: $main_color_light_green;
   border-radius: 1vh 1vh 5vh 5vh;
   padding: 0 0 10vh 0;
   margin-left: 5vw;
-  margin-top: -100vh;
-  animation: 1s block__1__left__card__text 0.5s ease-in-out forwards;
+  width: 100%;
+  height: 100%;
+  //margin-top: -100vh;
+  //margin-top: 10vh;
+  animation: 1.5s block__1__left__card__text 0s ease-in-out forwards;
 }
+
 @keyframes block__1__left__card__text {
-  from{
+  from {
     margin-top: -100vh;
   }
-  to{
-    margin-top: 10vh;
+  to {
+    margin-top: 7vh;
+    //position: absolute;
+    //color: $main_color_white;
+    //background-color: $main_color_light_green;
+    //border-radius: 1vh 1vh 5vh 5vh;
+    //padding: 0 0 10vh 0;
+    //margin-left: 5vw;
+    //width: 100%;
+    //height: 100%;
   }
 }
-.block__1__left__card__image{
+
+.block__1__left__card__image {
   width: 100%;
 }
-.left__margin__2{
+
+.left__margin__2 {
   margin-left: 2vw;
 }
-.block__1__left__card__text__red__line{
+
+.block__1__left__card__text__red__line {
   background-color: $main_color_red;
   border-top-right-radius: 2vh;
   border-bottom-right-radius: 2vh;
@@ -66,7 +85,8 @@
   display: flex;
   align-items: center;
 }
-.home__dark__round__back{
+
+.home__dark__round__back {
   position: absolute;
   background-color: #ecf0ee;
   box-shadow: -10px 5px 5px #e3e7e6;
@@ -77,23 +97,25 @@
   right: -75vw;
   animation: 10s home__dark__round__back 0s ease-in-out infinite;
 }
+
 @keyframes home__dark__round__back {
-  from{
+  from {
     transform: scale(1);
   }
-  50%{
+  50% {
     transform: scale(1.2);
   }
 
-  to{
+  to {
     transform: scale(1);
   }
 }
 
-.block__1__circle{
+.block__1__circle {
 
 }
-.block__1__square{
+
+.block__1__square {
   position: absolute;
   right: -5vw;
   bottom: 5vh;
@@ -101,12 +123,13 @@
   height: 20vh;
   //background-color: rgba(142,145,144,0.47);
 }
-.block__1__text{
+
+.block__1__text {
 
 }
 
 
-.block__1__logo__text__container{
+.block__1__logo__text__container {
   z-index: 3;
   position: absolute;
   bottom: 12.5%;
@@ -115,15 +138,17 @@
   animation: 1s block__1__logo__text__container 500ms ease-out forwards;
   transition: .1s;
 }
+
 @keyframes block__1__logo__text__container {
-  from{
+  from {
     right: -100vw;
   }
-  to{
+  to {
     right: .5vw;
   }
 }
-.logoEpikur__block1__path2{
+
+.logoEpikur__block1__path2 {
   stroke-width: 60;
   stroke-linejoin: round;
   //stroke: rgba(142,145,144,0.47);
@@ -132,31 +157,40 @@
   stroke-dasharray: 1800%;
   //animation: 1500ms logoEpikur__path2 0s linear forwards;
 }
+
 /////////////////////////////////////////////////////////////////////////////
 // Block2
 /////////////////////////////////////////////////////////////////////////////
-.block__2__container{
+.block__2__container {
   position: relative;
   height: 70vh;
   width: 100vw;
   margin-top: 15vh;
   margin-bottom: 15vh;
   overflow: hidden;
+  display: block;
 }
-.test__img__block2{
+@media (max-width: 768px) {
+  .block__2__container {
+    display: none;
+  }
+}
+.test__img__block2 {
   width: 100%;
 }
+
 /////////////////////////////////////////////////////////////////////////////
 // Block3
 /////////////////////////////////////////////////////////////////////////////
-.block__3__container{
+.block__3__container {
   position: relative;
   height: 100vh;
   width: 100vw;
   background-color: $main_color_green;
   overflow: hidden;
 }
-.block__3__round__dark{
+
+.block__3__round__dark {
   position: absolute;
   background-color: $main_color_dark_green;
   border-radius: 50%;
@@ -166,45 +200,54 @@
   left: -75vw;
   animation: 10s header__dark__round__back 0s ease-in-out infinite;
 }
+
 @keyframes header__dark__round__back {
-  from{
+  from {
     transform: scale(1);
   }
-  50%{
+  50% {
     transform: scale(1.2);
   }
 
-  to{
+  to {
     transform: scale(1);
   }
 }
-.block__3__left__container{
+
+.block__3__left__container {
   padding: 5vh;
 }
-.block__3__header{
+
+.block__3__header {
   white-space: nowrap;
 }
-.text__space{
+
+.text__space {
   width: calc(2vh + 2vw);
 }
-.block__3__text{
+
+.block__3__text {
   position: absolute;
   bottom: 10vh;
   width: 60%;
   color: $main_color_white;
 }
-.block__3__header__text__1{
+
+.block__3__header__text__1 {
   color: $main_color_white;
   font-size: calc(3vh + 3vw);
 }
-.block__3__header__text__2{
+
+.block__3__header__text__2 {
   color: $main_color_red;
   font-size: calc(4vh + 4vw);
 }
-.inline{
+
+.inline {
   display: inline-block;
 }
-.block__3__calc__container{
+
+.block__3__calc__container {
   position: absolute;
   bottom: 2vh;
   right: 1vw;
@@ -212,18 +255,18 @@
   align-items: center;
   justify-content: center;
 }
-.block__3__calc__container__inner{
-  //background-color: white;
-}
-.block__3__calc__img__container{
+
+.block__3__calc__img__container {
   width: 60%;
   overflow: hidden;
   border-radius: 5vh;
 }
-.block__3__calc__img{
+
+.block__3__calc__img {
   width: 100%;
 }
-.block__3__girl__img{
+
+.block__3__girl__img {
   //height: 90%;
   //position: absolute;
   width: 100%;
@@ -231,7 +274,7 @@
   //margin-left: 35vw;
 }
 
-.block__3__logo__lapka__container{
+.block__3__logo__lapka__container {
   border-radius: 100%;
   //z-index: 3;
   background: transparent;
@@ -240,46 +283,54 @@
   left: -2.8vw;
   width: 30vw;
 }
-.logoLapka__block3__path1{
+
+.logoLapka__block3__path1 {
   stroke-width: 22;
   stroke-linejoin: round;
   stroke: $main_color_light_green;
   stroke-dasharray: 3500%;
   fill: $main_color_light_green;
-    stroke-dashoffset: 0;
+  stroke-dashoffset: 0;
 }
-.logoLapka__block3__path{
+
+.logoLapka__block3__path {
   stroke-width: 22;
   stroke-linejoin: round;
   stroke: $main_color_light_green;
   stroke-dasharray: 3500%;
   fill: $main_color_light_green;
-    stroke-dashoffset: 0;
+  stroke-dashoffset: 0;
 }
+
 /////////////////////////////////////////////////////////////////////////////
 // Block4
 /////////////////////////////////////////////////////////////////////////////
-.block__4__container{
+.block__4__container {
   position: relative;
   height: 75vh;
   width: 100vw;
   background-color: #eaeeed;
   margin-top: 15vh;
 }
-.display__flex__center{
+
+.display__flex__center {
   display: flex;
   justify-content: center;
   text-align: center;
 }
-.block__4__text__container{
-  padding-top: 40vh!important;
+
+.block__4__text__container {
+  padding-top: 40vh !important;
 }
-.block__4__header{
+
+.block__4__header {
   font-size: calc(3vw + 3vw);
 }
-.block__4__text{
+
+.block__4__text {
   padding: 3vh;
 }
+
 @media screen and (max-width: 600px) {
   html {
     font-size: 13px
@@ -287,14 +338,16 @@
 
   body {
     height: auto;
-    max-height: auto;
+    //max-height: auto;
   }
 }
+
 @media screen and (max-width: 400px) {
   html {
     font-size: 11px
   }
 }
+
 .site-wrapper {
   width: 100%;
   max-width: 1600px;
@@ -326,6 +379,7 @@
   bottom: 0;
   top: 13vh;
   left: 0;
+  height: 50px;
   margin: auto;
   text-transform: none;
   white-space: nowrap;
@@ -347,53 +401,59 @@
   }
 }
 
-.block__4__text__1{
+.block__4__text__1 {
   display: inline-block;
   color: $main_color_green;
 }
-.block__4__text__2{
+
+.block__4__text__2 {
   display: inline-block;
   color: $main_color_black;
 }
-.block__4__text__3{
+
+.block__4__text__3 {
   display: inline-block;
   color: $main_color_green;
 }
 
 
-
-
-
-.block__4__egg1__container{
+.block__4__egg1__container {
   position: absolute;
   top: 30vh;
   left: 5vw;
 }
-.block__4__egg1{
+
+.block__4__egg1 {
   width: 10vw;
 }
-.block__4__egg2__container{
+
+.block__4__egg2__container {
   position: absolute;
   top: 50vh;
   left: 15vw;
 }
-.block__4__egg2{
+
+.block__4__egg2 {
   width: 10vw;
 }
-.block__4__egg3__container{
+
+.block__4__egg3__container {
   position: absolute;
   top: 15vh;
   left: 55vw;
 }
-.block__4__egg3{
+
+.block__4__egg3 {
   width: 10vw;
 }
-.block__4__img4__container{
+
+.block__4__img4__container {
   position: absolute;
   top: 55vh;
   left: 35vw;
 }
-.block__4__img4{
+
+.block__4__img4 {
   width: 20vw;
 }
 
@@ -401,78 +461,92 @@
 /////////////////////////////////////////////////////////////////////////////
 // Block5
 /////////////////////////////////////////////////////////////////////////////
-.block__5__container{
+.block__5__container {
   position: relative;
   height: 100vh;
   width: 100vw;
-  padding: 5vh!important;
+  padding: 5vh !important;
 }
-.block__5__left__container{
+
+.block__5__left__container {
 
 }
-.block__5__right__container{
+
+.block__5__right__container {
 
 }
-.block__5__text__container{
+
+.block__5__text__container {
   text-align: right;
 }
-.block__5__header__absolute{
+
+.block__5__header__absolute {
   position: absolute;
   z-index: 1;
   width: 90vw;
 }
-.block__5__header__small{
+
+.block__5__header__small {
   text-align: right;
   font-size: calc(1.5vh + 1.5vw);
   color: $main_color_light_green;
 }
-.block__5__header{
+
+.block__5__header {
   white-space: nowrap;
   text-align: right;
 }
-.block__5__header__text__1{
+
+.block__5__header__text__1 {
   color: $main_color_light_green;
   font-size: calc(3vh + 3vw);
 }
-.block__5__header__text__2{
+
+.block__5__header__text__2 {
   color: $main_color_black;
   font-size: calc(3vh + 3vw);
 }
-.block__5__header__text__3{
+
+.block__5__header__text__3 {
   color: $main_color_black;
   font-size: calc(3vh + 3vw);
 }
-.block__5__text{
+
+.block__5__text {
   margin-left: 45vw;
   margin-top: 10vh;
 }
-.block__5__img__container{
+
+.block__5__img__container {
   position: absolute;
-  z-index: 100!important;
+  z-index: 100 !important;
   top: 35vh;
   border-radius: 50% 55% / 60% 40%;
   overflow: hidden;
   width: 80%;
   animation: 5s block__5__img__container 0s ease-in-out infinite;
 }
+
 @keyframes block__5__img__container {
-  25%{
+  25% {
     border-radius: 55% 50% / 65% 55%;
   }
-  50%{
+  50% {
     border-radius: 70% 50% / 70% 45%;
   }
-  75%{
+  75% {
     border-radius: 60% 55% / 65% 40%;
   }
-  to{
+  to {
     border-radius: 50% 55% / 60% 40%;
   }
 }
-.block__5__img{
+
+.block__5__img {
   width: 100%;
 }
-.block__5__img__circle{
+
+.block__5__img__circle {
   z-index: 1;
   position: absolute;
   top: 50%;
@@ -488,66 +562,74 @@
 /////////////////////////////////////////////////////////////////////////////
 // Chicken PNG Animation
 /////////////////////////////////////////////////////////////////////////////
-.ch__all__images__container{
+.ch__all__images__container {
   height: 15vh;
   width: 10vw;
   position: absolute;
   bottom: 5vh;
 }
-.chicken__images__1__container{
+
+.chicken__images__1__container {
   display: inline-block;
 }
-.chicken__images__img__1{
+
+.chicken__images__img__1 {
   width: 100%;
   height: 100%;
   position: absolute;
 }
-.chicken__images__img__2{
+
+.chicken__images__img__2 {
   width: 100%;
   height: 100%;
   position: absolute;
   animation: 5s chicken__images__img__2 0s linear infinite;
 }
+
 @keyframes chicken__images__img__2 {
-  from{
+  from {
     transform: rotate(-5deg) translate(-0%, 5%);
   }
-  50%{
+  50% {
     transform: rotate(2deg);
   }
 
-  to{
+  to {
     transform: rotate(-5deg) translate(-0%, 5%);
   }
 }
 
-.chicken__images__2__container{
+.chicken__images__2__container {
   margin-left: 22vw;
 }
-.chicken__images__img__2__1{
-width: 100%;
+
+.chicken__images__img__2__1 {
+  width: 100%;
   height: 100%;
   position: absolute;
 }
-.chicken__images__img__2__2{
+
+.chicken__images__img__2__2 {
   width: 100%;
   height: 100%;
   position: absolute;
   animation: 2s chicken__images__img__2__2 0s ease-in-out infinite;
 }
+
 @keyframes chicken__images__img__2__2 {
-  from{
+  from {
     transform: rotate(-25deg) translate(-0%, -10%);
   }
-  50%{
+  50% {
     transform: rotate(0deg);
   }
 
-  to{
+  to {
     transform: rotate(-25deg) translate(-0%, -10%);
   }
 }
-.chicken__images__img__3{
+
+.chicken__images__img__3 {
   margin-top: 6vh;
   margin-left: 4vw;
   width: 35vw;
@@ -558,31 +640,35 @@ width: 100%;
 /////////////////////////////////////////////////////////////////////////////
 // Block6
 /////////////////////////////////////////////////////////////////////////////
-.block__6__container{
+.block__6__container {
   position: relative;
   height: 90vh;
   width: 100vw;
   //margin: 5vh;
 }
-.width100__height100{
+
+.width100__height100 {
   height: 100vh;
   width: 100vw;
 }
-.block__6__image__container{
+
+.block__6__image__container {
   width: 100%;
   height: 100%;
   //display: flex;
   //justify-content: center;
   //align-items: center;
 }
-.block__6__image__img{
+
+.block__6__image__img {
   width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.block__6__round__back{
+
+.block__6__round__back {
   background-color: #bbbbbb;
   object-fit: cover;
   position: absolute;
@@ -594,21 +680,23 @@ width: 100%;
   border-radius: 65% 45% / 70% 50%;
   animation: 5s block__6__round__back 0s ease-in-out infinite;
 }
+
 @keyframes block__6__round__back {
-  25%{
+  25% {
     border-radius: 55% 50% / 65% 55%;
   }
-  50%{
+  50% {
     border-radius: 70% 50% / 70% 45%;
   }
- 75%{
+  75% {
     border-radius: 60% 55% / 65% 40%;
   }
-  to{
+  to {
     border-radius: 65% 45% / 70% 50%;
   }
 }
-.block__6__img{
+
+.block__6__img {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -616,170 +704,192 @@ width: 100%;
 }
 
 
-
-
-
-
-.block__6__img1__container{
+.block__6__img1__container {
   position: absolute;
   top: 5vh;
   left: 5vw;
 }
-.block__6__img1{
+
+.block__6__img1 {
   width: 20vw;
 }
-.block__6__img2__container{
+
+.block__6__img2__container {
   position: absolute;
   top: 4vh;
   right: 5vw;
 }
-.block__6__img2{
+
+.block__6__img2 {
   width: 26vw;
 }
-.block__6__img3__container{
+
+.block__6__img3__container {
   position: absolute;
   top: 75vh;
   left: 15vw;
 }
-.block__6__img3{
+
+.block__6__img3 {
   width: 30vw;
 }
-.block__6__img4__container{
+
+.block__6__img4__container {
   position: absolute;
   top: 23vh;
   left: 18vw;
 }
-.block__6__img4{
+
+.block__6__img4 {
   width: 15vw;
 }
-.block__6__img5__container{
+
+.block__6__img5__container {
   position: absolute;
   top: 12vh;
   left: 30vw;
 }
-.block__6__img5{
+
+.block__6__img5 {
   width: 10vw;
 }
-.block__6__img6__container{
+
+.block__6__img6__container {
   position: absolute;
   top: 55vh;
   left: -2vw;
 }
-.block__6__img6{
+
+.block__6__img6 {
   width: 25vw;
 }
-.block__6__img7__container{
+
+.block__6__img7__container {
   position: absolute;
   top: 50vh;
   left: 7vw;
 }
-.block__6__img7{
+
+.block__6__img7 {
   width: 10vw;
 }
-.block__6__img8__container{
+
+.block__6__img8__container {
   position: absolute;
   top: 45vh;
   left: 4vw;
 }
-.block__6__img8{
+
+.block__6__img8 {
   width: 10vw;
 }
-.block__6__img9__container{
+
+.block__6__img9__container {
   position: absolute;
   top: 33vh;
   left: 11vw;
 }
-.block__6__img9{
+
+.block__6__img9 {
   width: 15vw;
 }
-.block__6__img10__container{
+
+.block__6__img10__container {
   position: absolute;
   top: 18vh;
   left: 30vw;
 }
-.block__6__img10{
+
+.block__6__img10 {
   width: 20vw;
 }
 
 
-
-
-
-
-.block__6__text__container{
+.block__6__text__container {
   position: absolute;
   bottom: 0vh;
   right: 0;
   width: 60vw;
   text-align: right;
 }
-.block__6__header__1{
+
+.block__6__header__1 {
   white-space: nowrap;
   color: $main_color_light_green;
   font-size: calc(3vh + 3vw);
 }
-.block__6__text__1{
+
+.block__6__text__1 {
   margin-top: 3vh;
 }
-
 
 
 /////////////////////////////////////////////////////////////////////////////
 // Block7
 /////////////////////////////////////////////////////////////////////////////
-.block__7__container{
+.block__7__container {
   position: relative;
   height: 100%;
   width: 100vw;
   //margin: 5vh;
   padding-top: 30vh;
 }
-.card__container{
+
+.card__container {
   display: inline-block;
   height: 70vh;
   width: 33vw;
   padding: 3vh;
+
 }
-.card__img__container{
+
+.card__img__container {
   height: 30vh;
   width: 90%;
   overflow: hidden;
   border-radius: 65% 45% / 70% 50%;
 
 }
+
 @keyframes card__img__container {
-  25%{
+  25% {
     border-radius: 25% 70% / 80% 35%;
   }
-  50%{
+  50% {
     border-radius: 60% 90% / 85% 35%;
   }
-  75%{
+  75% {
     border-radius: 15% 65% / 75% 35%;
   }
-  to{
+  to {
     border-radius: 65% 45% / 70% 50%;
   }
 }
-.card__img{
+
+.card__img {
   height: 100%;
 }
-.card__header{
+
+.card__header {
   margin-top: 5vh;
   white-space: nowrap;
   color: $main_color_black;
   font-size: calc(2vh + 2vw);
 }
-.card__text1{
+
+.card__text1 {
 
 }
-.card__img2{
+
+.card__img2 {
   height: 5vh;
 }
-.card__text2{
+
+.card__text2 {
 
 }
-.card__line1{
+
+.card__line1 {
   margin-top: 5vh;
   height: 3px;
   width: 33%;
@@ -787,20 +897,10 @@ width: 100%;
 }
 
 
-
-
-
-
-
-
-
-
-
-
 /////////////////////////////////////////////////////////////////////////////
 // Block8
 /////////////////////////////////////////////////////////////////////////////
-.block__8__container{
+.block__8__container {
   position: relative;
   height: 100vh;
   width: 100vw;
@@ -808,55 +908,62 @@ width: 100%;
   //background-color: $main_color_green;
   overflow: hidden;
 }
-.block__8__footer__img__container{
+
+.block__8__footer__img__container {
   position: absolute;
   bottom: 0;
   width: 100vw;
   min-height: 50vh;
   //overflow: hidden;
 }
-.block__8__footer__img1{
+
+.block__8__footer__img1 {
   position: absolute;
   width: 100%;
   bottom: 0;
   animation: 2s block__8__footer__img1 0s ease-in-out infinite;
 }
+
 @keyframes block__8__footer__img1 {
-  from{
+  from {
     transform: rotate(-3deg) translate(-1%, -5%);
   }
-  50%{
+  50% {
     transform: rotate(0deg);
   }
 
-  to{
+  to {
     transform: rotate(-3deg) translate(-1%, -5%);
   }
 }
-.block__8__footer__img2{
+
+.block__8__footer__img2 {
   position: absolute;
   width: 100%;
   bottom: 0;
   animation: 2s block__8__footer__img2 0s ease-in-out infinite;
 }
+
 @keyframes block__8__footer__img2 {
-  from{
+  from {
     transform: rotate(-1deg) translate(-1%, -0%);
   }
-  50%{
+  50% {
     transform: rotate(0deg);
   }
 
-  to{
+  to {
     transform: rotate(-1deg) translate(-1%, -0%);
   }
 }
-.block__8__footer__img3{
+
+.block__8__footer__img3 {
   position: absolute;
   width: 100%;
   bottom: 0;
 }
-.block__8__map__container{
+
+.block__8__map__container {
   z-index: 100;
   position: absolute;
   bottom: 10%;
@@ -867,7 +974,8 @@ width: 100%;
   border-radius: 5vh 0 0 5vh;
   overflow: hidden;
 }
-.block__8__round__dark{
+
+.block__8__round__dark {
   position: absolute;
   background-color: $main_color_dark_green;
   border-radius: 50%;
@@ -882,21 +990,76 @@ width: 100%;
 // media
 //////////////////////////////////////////////////////////////////////////////////////////
 
-@media (max-width: 767px) {
-  .preloader__container {
-    display: none;
+@media (max-width: 768px) {
+  .block__1__display__none{
+  display: none;
   }
+  //.preloader__container {
+  //  display: none;
+  //}
   .block__1__container {
     height: 86vh;
     width: 100vw;
     padding-top: 4vh;
   }
   .block__1__left__card__text {
-    margin: 0 20px;
+    //margin: 0 20px;
+    //margin: 10vh 5px 0 5px;
+    margin: 0;
+    width: 100vw;
+  }
+  .block__3__container{
+    margin-top: 75px;
+    //height: auto;
+    height: 160vh;
   }
   .block__3__calc__container {
     position: absolute;
-    bottom: 0;
+    top: 45vh;
+  }
+  .block__3__logo__lapka__container{
+    bottom: 1.2vw;
+    left: 0.2vw;
+  }
+    .block__3__header {
+    padding-left: 20px;
+    }
+  .block__4__container{
+    margin-top: 0;
+  }
+  .block__4__text__container{
+    padding-top: 25vh !important;
+  }
+  .block__5__img__circle{
+    right: 45vw;
+    top: 90%;
+    width: 55%;
+    height: 55vh;
+  }
+  .block__5__img__container{
+    width: 55%;
+    right: 45vw;
+    top: 25vh;
+  }
+  .chicken__images__img__3{
+    width: 80vw;
+  }
+  .ch__all__images__container{
+    width: 25vw;
+  }
+  .block__6__text__container{
+    right: 25px;
+    top: 15vh;
+  }
+  .block__6__round__back{
+    width:80vw;
+  }
+  .block__7__container{
+    display: flex;
+    flex-direction: column;
+  }
+  .card__container{
+    margin:auto;
   }
 }
 
@@ -907,14 +1070,66 @@ width: 100%;
     padding-top: 0;
 
   }
-  .block__1__left__card__text {
-    margin-top: 8vh !important;
-  }
+  //.block__1__left__card__text {
+  //  margin-top: 8vh !important;
+  //}
 
-  }
+}
+@media (max-width:425px){
+.Calculator__label{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+  .block__3__container{
+    height: 135vh;
+    margin-top: 60px;
+  }
+  .block__3__header{
+    white-space: normal;
+  }
+  .block__5__header__absolute{
+    width:85vw;
+  }
+  .block__5__img__container{
+    width: 70%;
+    right: 35vw;
+    top: 30vh;
+  }
+  .block__5__img__circle{
+    top: 85%;
+    height:40vh;
+    right: 35vw;
+    width: 65%;
+  }
+  .ch__all__images__container{
+    width: 20vw;
+    height: 12vh;
+  }
+  .block__6__text__container{
+    right: 110px;
+  }
+  .block__6__round__back{
+    width:100vw;
+  }
+  .card__container{
+    width: 100vw;
+  }
+  .block__7__container{
+    margin-top: 35vh;
+    padding: 0;
+  }
+}
 @media (max-width: 375px) {
   .block__1__container {
-    height: 72vh;
+    //height: 72vh;
+    height: 55vh;
   }
+  .block__6__text__1{
+    margin: 3vh 0 0 50px;
   }
+  .card__container{
+    height: 60vh;
+  }
+}

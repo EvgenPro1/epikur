@@ -4,7 +4,7 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 import { Parallax } from 'react-scroll-parallax';
 import logo from "../../components/Svg/Images/LogoTextHeader";
 import ReactPlayer from "react-player";
-
+import VideoChicken from "../../../video/videoplayback.mp4"
 
 const Block2 = () => {
     return (
@@ -30,23 +30,25 @@ const Block2 = () => {
             {/*    <BigPlayButton position="center" />*/}
             {/*</Player>*/}
 
-            <ReactPlayer
-                className='react-player'
-                url='https://www.youtube.com/watch?v=SmBzqkgdH9I'
-                width='100%'
-                height='90%'
-                playing={true}
-                loop={true}
-                // onReady={true}
-                />
-            <video width="400" height="300"  autoPlay loop muted className="1" >
-                <source src="https://www.youtube.com/watch?v=SmBzqkgdH9I" type='video/ogg; codecs="theora, vorbis"'/>
-                    <source src="https://www.youtube.com/watch?v=SmBzqkgdH9I" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/>
-                        <source src="https://www.youtube.com/watch?v=SmBzqkgdH9I" type='video/webm; codecs="vp8, vorbis"'/>
-
-                <source src="https://www.youtube.com/watch?v=SmBzqkgdH9I" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/>
+            {/*<ReactPlayer*/}
+            {/*    className='react-player'*/}
+            {/*    url='https://www.youtube.com/watch?v=SmBzqkgdH9I'*/}
+            {/*    width='100%'*/}
+            {/*    height='90%'*/}
+            {/*    playing={true}*/}
+            {/*    loop={true}*/}
+            {/*    // onReady={true}*/}
+            {/*    />*/}
+            <video width="100%" height="90%"
+                   autoPlay
+                   loop
+                   controls
+                   muted
+                   className="block__2__video" >
+                <source src={VideoChicken} type='video/ogg; codecs="theora, vorbis"'/>
+                <source src={VideoChicken} type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/>
+                <source src={VideoChicken} type='video/webm; codecs="vp8, vorbis"'/>
             </video>
-
             {/*    }*/}
             {/*/>*/}
 

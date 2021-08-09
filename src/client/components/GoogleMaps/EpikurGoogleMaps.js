@@ -43,7 +43,7 @@ function EpikurGoogleMaps() {
 
     // const onLoad = marker => {
     //     console.log('marker: ', marker)}
-    console.log(arrMarkers);
+    // console.log(arrMarkers);
 
     const markers = arrMarkers.map(marker=><Marker position={{lat:+marker.lat, lng: +marker.lng}}/>)
 

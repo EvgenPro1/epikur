@@ -33,7 +33,7 @@ const Block1 = () => {
                     </div>
 
                 </Col>
-                <Col md={6} className={'height__width__100'}>
+                <Col md={6} className={'height__width__100 block__1__display__none'}>
                     <div className={'block__1__circle'}></div>
                     <div className={'block__1__square'}></div>
                     <div className={'block__1__text'}></div>

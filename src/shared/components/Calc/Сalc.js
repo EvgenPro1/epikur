@@ -72,7 +72,7 @@ const Calc = () => {
                     </div>
                 </div>
                 <div className={'calc__inputs__container__2'}>
-                    <div className="">
+                    <div className="calc__inputs__age__weight__container">
                         <div className="calc-input-block d-inline-flex">
                             <label className="Calculator__label bold">
                                 <div className={'calc__label__text'}>Вік</div>

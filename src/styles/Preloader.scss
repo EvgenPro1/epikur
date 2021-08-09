@@ -27,8 +27,8 @@ $stroke_width: 30;
   //width: 80vw;
   animation: 1s anim_logoEpikur__container2 2500ms ease-out forwards;
   transition: .1s;
-
 }
+
 @keyframes anim_logoEpikur__container2 {
   to {
     //top: 0;
@@ -72,10 +72,14 @@ $stroke_width: 30;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 30vw;
-  animation: 1s anim_logoEpikur__container 3s linear forwards;
-  transition: 1s;
+  animation: 1s anim_logoEpikur__container 2500ms linear forwards;
+  transition: .1s;
 }
 @keyframes anim_logoEpikur__container {
+  0%{
+    top: 50%;
+    left: 50%;
+}
   //50% {
   //  left: 20px;
   //  top:50%;
@@ -89,7 +93,7 @@ $stroke_width: 30;
   //
   100% {
     //top: 20vh;
-    left: 90%;
+    left: 200vw;
     //transform: translate(-0%, -50%);
     //transform: scale(0.09);
   }
@@ -100,7 +104,7 @@ $stroke_width: 30;
   stroke: $main_color_light_green;
   fill: none;
   stroke-dasharray: 3500%;
-  animation: 3s anim_logoEpikur__path1 0s linear forwards;
+  animation: 2s anim_logoEpikur__path1 0s linear forwards;
 }
 .logoEpikur__path11{
   stroke-width: $stroke_width*0.75;
@@ -108,7 +112,7 @@ $stroke_width: 30;
   stroke: $main_color_light_green;
   fill: none;
   stroke-dasharray: 3500%;
-  animation: 3s anim_logoEpikur__path1 0s linear forwards;
+  animation: 2s anim_logoEpikur__path1 0s linear forwards;
 }
 @keyframes anim_logoEpikur__path1 {
   0% {
@@ -122,12 +126,6 @@ $stroke_width: 30;
     stroke-dashoffset: 0;
   }
 }
-
-
-
-
-
-
 .second-preloader__container {
   border-radius: 100%;
   z-index: 1;
@@ -143,9 +141,6 @@ $stroke_width: 30;
   opacity: 0;
   visibility: hidden;
 }
-
-
-
 .logoEpikur__path {
   stroke-width: $stroke_width;
   stroke-linejoin: round;
@@ -173,10 +168,22 @@ $stroke_width: 30;
 //////////////////////////////////////////////////////////////////////////////////////////
 
 @media (max-width: 768px) {
-
+  .preloader__container2{
+  width: 50vw;
+  }
+  .preloader__container{
+    width: 45vw;
+    left: 75%;
+  }
+  @keyframes anim_logoEpikur__container {
+    0%{
+      left: 75%;
+    }
+    100%{
+      left: 200vw;
+    }
+  }
 }
-
-
 
 @media (max-width: 1400px) {
   .header__text__load__container {
