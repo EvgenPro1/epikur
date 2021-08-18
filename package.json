@@ -30,6 +30,7 @@
     "react-scroll-parallax": "^2.4.0",
     "react-vivus": "^0.0.2",
     "redux": "^4.1.0",
+    "swiper": "^6.8.1",
     "video-react": "^0.14.1",
     "vivus": "^0.4.6",
     "web-vitals": "^1.0.1"

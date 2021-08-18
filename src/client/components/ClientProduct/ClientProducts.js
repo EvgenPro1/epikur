@@ -7,6 +7,8 @@ import {getCollection} from "../../../Firebase/helper";
 
 import './ClientProducts.scss'
 import ClientProductCard from "../ClientProductCard/ClientProductCard";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 // import NewsCard from "../NewsCard/NewsCard";
 
 const defaultCollection = 'ProductsEpikur'
@@ -34,11 +36,16 @@ const ClientProducts = () => {
     ))
 
     return (
-        <div className="client-products-component-page">
-        {/*// <main className="client-products-page-content">*/}
-            {clientProductsList()}
-        {/*// </main>*/}
- </div>
+        <>
+            <Header/>
+            <div style={{marginTop:"18vh",marginBottom:"10vh"}} className="client-products-component-page">
+                {/*// <main className="client-products-page-content">*/}
+                {clientProductsList()}
+                {/*// </main>*/}
+            </div>
+            <Footer/>
+        </>
+
     )
 };
 

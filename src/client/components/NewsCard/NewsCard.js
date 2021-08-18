@@ -11,14 +11,24 @@ const NewsCard = ({text, actual, date, image, title}) => {
                 <div className="news-preview d-flex flex-column">
                     <h3 className="news-preview-title">{title}</h3>
                     <div className="news-preview-content">
-                        <img src={image} className='news-preview-image' alt=""/>
-                        <div className="news-preview-text d-inline-flex col-10 text "><div className="wrap truncate">
+                        <div className={"news__card__img__btn__container"}>
+                            <img src={image} className='news-preview-image' alt=""/>
+                            <div style={{width:"100%",marginTop: "20px"}}>
+                                <div  className='align-items-center justify-content-center col-2'>
+                            <span onClick={() => setShow(true)} style={{width:"10vw"}} className="closing-button btn-test"><span
+                                className='text-pseudo-button'>Дізнатися більше</span>
+                        </span>
+                                </div>
+                            </div>
 
-                        {text}</div></div>
-                        <div className='align-items-center justify-content-center col-2'>
-                            <span onClick={() => setShow(true)} className="closing-button btn-test"><span
-                            className='text-pseudo-button'>Дізнатися більше</span>
-                        </span></div>
+                        </div>
+
+                        <div className="news-preview-text d-inline-flex col-10 text ">
+                            <div className="wrap truncate">
+                        {text}
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 

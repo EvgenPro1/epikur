@@ -42,7 +42,6 @@ const Block2 = () => {
             <video width="100%" height="90%"
                    autoPlay
                    loop
-                   controls
                    muted
                    className="block__2__video" >
                 <source src={VideoChicken} type='video/ogg; codecs="theora, vorbis"'/>

@@ -10,8 +10,8 @@ const Block1 = () => {
         <div className={'block__1__container'}>
 
             {/*<div className={'home__dark__round__back'}/>*/}
-            <Row className={'height__width__100'}>
-                <Col md={6} className={'height__width__100'}>
+            {/*<Row className={'height__width__100'}>*/}
+            {/*    <Col md={6} className={'height__width__100'}>*/}
                     {/*<p className={'Formular-Regular'}>Formular-Regular HELLO hello привет ЗДОРОВА world 123</p>*/}
                     {/*<br/>*/}
                     {/*<p className={'Formular-Bold'}>Formular-Bold HELLO hello привет ЗДОРОВА world 123</p>*/}
@@ -21,29 +21,34 @@ const Block1 = () => {
                     {/*<p className={'Formular-Medium'}>Formular-Medium HELLO hello привет ЗДОРОВА world 123</p>*/}
                     {/*<br/>*/}
 
-                    <div className={'block__1__left__card__text'}>
+                    <div className={'block__1__left__card__text block__1__display__container'}>
                         <img src={plate} alt="plate" className={'block__1__left__card__image'}/>
-                        <h1 className={'Bebas-Neue-Regular left__margin__2'}>FRESH КУР</h1>
-                        <h1 className={'Bebas-Neue-Bold left__margin__2'}>MAX PROTEIN</h1>
-                        <h1 className={'Bebas-Neue-Bold left__margin__2'}>MIN FAT</h1>
-                        <div className={'block__1__left__card__text__red__line'}>
-                            <div className={'Bebas-Neue-Regular left__margin__2'}>БЕЗ АНТИБIOТИКIВ ТА ГОРМОНIВ РОСТУ</div>
+                        <div className={"block__1__title__container"}>
+                            <h1 className={'Bebas-Neue-Regular left__margin__2'}>FRESH КУР</h1>
+                            <h1 className={'Bebas-Neue-Bold left__margin__2'}>MAX PROTEIN</h1>
+                            <h1 className={'Bebas-Neue-Bold left__margin__2'}>MIN FAT</h1>
                         </div>
 
+                        <div className={'block__1__left__card__text__red__line'}>
+                            <div className={'Bebas-Neue-Regular left__margin__2 blok__1__red__back'}>БЕЗ АНТИБIOТИКIВ ТА ГОРМОНIВ РОСТУ</div>
+                        </div>
                     </div>
 
-                </Col>
-                <Col md={6} className={'height__width__100 block__1__display__none'}>
-                    <div className={'block__1__circle'}></div>
-                    <div className={'block__1__square'}></div>
-                    <div className={'block__1__text'}></div>
-                    <Preloader
-                        classname="block__1__logo__text__container"
-                        viewBox='0 420 3360.000000 490.000000'
-                        path={<LogoTextBlock1/>}
-                    />
-                </Col>
-            </Row>
+                {/*</Col>*/}
+                {/*<Col md={6} className={'height__width__100 block__1__display__none'}>*/}
+            <div>
+                <div className={'block__1__circle'}></div>
+                <div className={'block__1__square'}></div>
+                <div className={'block__1__text'}></div>
+                <Preloader
+                    classname="block__1__logo__text__container"
+                    viewBox='0 420 3360.000000 490.000000'
+                    path={<LogoTextBlock1/>}
+                />
+            </div>
+
+                {/*</Col>*/}
+            {/*</Row>*/}
         </div>
     );
 };

@@ -49,7 +49,6 @@ function EpikurGoogleMaps() {
 
     return isLoaded ? (
         <GoogleMap
-
             mapContainerStyle={containerStyle}
             center={googleMapCurrentProps.center}
             zoom={googleMapCurrentProps.zoom}

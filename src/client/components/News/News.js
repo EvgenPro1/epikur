@@ -7,6 +7,8 @@ import {getCollection} from "../../../Firebase/helper";
 
 import './News.scss'
 import NewsCard from "../NewsCard/NewsCard";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const defaultCollection = 'NewsEpikur'
 
@@ -33,9 +35,14 @@ const News = () => {
     ))
 
     return (
-        <div className='d-flex flex-column align-items-center'>
-            {newList()}
-        </div>
+        <>
+            <Header/>
+            <div style={{marginTop:"15vh",marginBottom:"10vh"}} className='d-flex flex-column align-items-center'>
+                {newList()}
+            </div>
+            <Footer/>
+        </>
+
 
     )
 };

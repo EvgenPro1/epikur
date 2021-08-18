@@ -12,6 +12,7 @@ import grass from '../../../img/grass.png'
 
 const Block5 = () => {
     return (
+        <>
         <Row className={'block__5__container'}>
             <Row className={'block__5__header__absolute'}>
                 <Row>
@@ -31,29 +32,33 @@ const Block5 = () => {
                     </Col>
                 </Row>
                 <Row className={'block__5__header'}>
-                    <Col>
+                    {/*<Col sm={6}>*/}
                         <div className={'Bebas-Neue-Bold inline block__5__header__text__3 '}>НАЙКРАЩИХ КУР</div>
-                    </Col>
+                    {/*</Col>*/}
                 </Row>
-                <Row>
+                <Row className={"block__5__img__text__container"}>
+                    <Col  className={'block__5__left__container'}>
+                        <div className={'block__5__img__circle'}/>
+                        <div className={'block__5__img__container'}>
+
+                            <img src={chicken} alt="chicken" className={'block__5__img'}/>
+
+                        </div>
+                    </Col>
                     <Col>
                         <div className={'block__5__text Formular-Light'}>
                             ПРОДУКЦІЯ ТМ” ЕПІКУР” - ЦЕ БІЛЬШЕ НІЖ СМАЧНА Й КОРИСНА КУРОЧКА БЕЗ АНТИБІОТИКІВ ТА ІНШИХ СТИМУЛЯТОРІВ РОСТУ. ВОНА ПОКЛИКАНА ДОПОМАГАТИ КОЖНІЙ ЛЮДИНІ ВЕСТИ ЗДОРОВЕ ТА ЩАСЛИВЕ ЖИТТЯ Й БУДУВАТИ ЙОГО ДЛЯ БЛИЗЬКИХ. МИ МРІЄМО ПРО ЩАСЛИВЕ СУСПІЛЬСТВО, ЩО ВМІЄ РАДІТИ ДРІБНИЦЯМ Й ЦІНУВАТИ КОЖНУ МИТЬ.
                         </div>
                     </Col>
+
+
+
+
                 </Row>
             </Row>
+        </Row>
 
-            <Col md={6} className={'block__5__left__container'}>
-                <div className={'block__5__img__circle'}/>
-                <div className={'block__5__img__container'}>
-
-                    <img src={chicken} alt="chicken" className={'block__5__img'}/>
-
-                </div>
-            </Col>
             <Col md={6} className={'block__5__right__container'}>
-
                 <div className={'ch__all__images__container'}>
                     <div className={'chicken__images__1__container'}>
                         <img src={ch1_1} alt="ch1_1" className={'chicken__images__img__1'}/>
@@ -67,7 +72,8 @@ const Block5 = () => {
                 </div>
 
             </Col>
-        </Row>
+
+        </>
     );
 };
 

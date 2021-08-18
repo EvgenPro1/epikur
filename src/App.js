@@ -22,6 +22,13 @@ import HeaderAdminHoc from "./HOC/HeaderAdminHOC/HeaderAdminHoc";
 import HeaderClientHoc from "./HOC/HeaderClientHOC/HeaderClientHOC";
 import News from "./client/components/News/News";
 import ClientProducts from "./client/components/ClientProduct/ClientProducts";
+import Block4 from "./client/pages/HomePage/Block4";
+import Block5 from "./client/pages/HomePage/Block5";
+import React from "react";
+import Preloader from "./client/components/PreloaderHeader/Preloader";
+import FullLogoEpikur from "./client/components/Svg/Images/FullLogoEpikur";
+import Footer from "./client/components/Footer/Footer";
+import AboutUs from "./client/components/AboutUs/AboutUs";
 
 function App() {
 
@@ -34,14 +41,47 @@ function App() {
     return (
         <Router>
             <Provider store={store}>
-                <Route exact path='/'><Home/></Route>
-                <Route exact path='/Home'><HomePage/></Route>
-                <Route exact path='/AdminProducts'><HeaderAdminHoc><AdminProducts/></HeaderAdminHoc></Route>
-                <Route exact path='/NewsAdminPage'><HeaderAdminHoc><NewsAdminPage/></HeaderAdminHoc></Route>
-                <Route exact path='/GoogleMapsAdminPage'><HeaderAdminHoc><GoogleMapsAdminPage/></HeaderAdminHoc></Route>
-
-                <Route exact path='/News'><HeaderClientHoc><News/></HeaderClientHoc></Route>
-                <Route exact path='/OurProducts'><HeaderClientHoc><ClientProducts/></HeaderClientHoc></Route>
+                <Route exact path='/'>
+                    <Home/>
+                </Route>
+                <Route exact path='/Home'>
+                    {/*<HomePage/>*/}
+                    <Home/>
+                </Route>
+                <Route exact path='/AdminProducts'>
+                    <HeaderAdminHoc>
+                        <AdminProducts/>
+                    </HeaderAdminHoc>
+                </Route>
+                <Route exact path='/NewsAdminPage'>
+                    <HeaderAdminHoc>
+                        <NewsAdminPage/>
+                    </HeaderAdminHoc>
+                </Route>
+                <Route exact path='/GoogleMapsAdminPage'>
+                    <HeaderAdminHoc>
+                        <GoogleMapsAdminPage/>
+                    </HeaderAdminHoc>
+                </Route>
+                <Route exact path='/News'>
+                    {/*<HeaderClientHoc>*/}
+                        <News/>
+                    {/*</HeaderClientHoc>*/}
+                </Route>
+                <Route exact path='/Our Products'>
+                    {/*<HeaderClientHoc>*/}
+                        <ClientProducts/>
+                    {/*</HeaderClientHoc>*/}
+                </Route>
+                <Route exact path='/About as'>
+                 <AboutUs/>
+                </Route>
+                <Route exact path='/Our partners'>
+                    <AboutUs/>
+                </Route>
+                <Route exact path='/Contacts'>
+                    <AboutUs/>
+                </Route>
             </Provider>
         </Router>
     )
@@ -50,8 +90,5 @@ function App() {
 export default App;
 
 
-
-
-
-
-{/*google-maps-key: AIzaSyABwpKfqjcCgsGGcFY2dhpb02HUPt_U4vk*/}
+{/*google-maps-key: AIzaSyABwpKfqjcCgsGGcFY2dhpb02HUPt_U4vk*/
+}

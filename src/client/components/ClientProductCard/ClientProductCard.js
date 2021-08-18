@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Modal from 'react-bootstrap/Modal'
 import './ClientProductCard.scss'
 import * as url from "url";
+import ButtonAnimation from "../ButtonAnimation/ButtonAnimation";
 
 const ClientProductCard = ({title, price,quantity, image, width = '100%', height = '100%'}) => {
 
@@ -26,7 +27,8 @@ const ClientProductCard = ({title, price,quantity, image, width = '100%', height
                     <h5 className="client-products-title">{title}</h5>
                     <p className="client-products-copy">рекомендована ціна: {price} грн.</p>
                                     <p className="client-products-copy">кількість білку: {quantity} грамм/кг</p>
-                    <button className="client-products-btn">де купити</button>
+                    {/*<button className="client-products-btn">де купити</button>*/}
+                        <ButtonAnimation text={"Дізнатися більше"}/>
                 </div></div>
             </div>
         {/*</div>*/}
